@@ -1,3 +1,9 @@
+# IPTV
+data.py
+data/
+defaults.cfg
+playlist.m3u
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
