@@ -88,7 +88,7 @@ class IPTV(object):
 
         group = meta.get("group")
         if group:
-            line += " group-title=\"{0}\"".format(",".join(group))
+            line += " group-title=\"{0}\"".format(";".join(group))
 
         radio = meta.get("radio")
         if radio == "true":
