@@ -44,7 +44,7 @@ class IPTV(object):
         self.config_data = {
             "filename": "playlist.m3u",
             "host": "127.0.0.1",
-            "port": "53473",
+            "port": "53422",
             "logopath": ""
         }
 
