@@ -24,7 +24,7 @@ except Exception as e:
 
 class IPTV(object):
     """IPTV M3U Playlist Generator for Livecli Proxy
-       https://github.com/livecli/iptv
+       https://github.com/back-to/iptv
     """
 
     def __init__(self):
@@ -103,10 +103,10 @@ class IPTV(object):
 
         url = source.get("url")
 
-        if source.get("type") == "livecli":
+        if (source.get("type") == "livecli" or source.get("type") == "streamlink"):
             params = {}
             params["url"] = quote_plus(url)
-            livecli_data = source.get("livecli_data")
+            livecli_data = source.get("livecli_data") or source.get("streamlink_data")
             if livecli_data:
                 for k, v in livecli_data:
                     params[quote_plus(k)] = quote_plus(v)

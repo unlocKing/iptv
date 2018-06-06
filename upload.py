@@ -12,8 +12,8 @@ from ftplib import FTP
 class UPLOAD(object):
     """FTP upload script.
 
-       IPTV M3U Playlist Generator for Livecli Proxy
-       https://github.com/livecli/iptv
+       IPTV M3U Playlist Generator for LiveProxy
+       https://github.com/back-to/iptv
     """
 
     def __init__(self):

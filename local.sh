@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# source: https://github.com/livecli/iptv
+# source: https://github.com/back-to/iptv
 # script to document all changes of playlist.m3u and data.py
 # in another private git folder which is located at ../../local/iptv
 # Guide:

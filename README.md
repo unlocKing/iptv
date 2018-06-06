@@ -1,10 +1,11 @@
 # iptv
-IPTV M3U Playlist Generator for Livecli Proxy
+
+IPTV M3U Playlist Generator for LiveProxy
 
 # Guide
 
 create files called `data.py` and `defaults.cfg`
-a valid file can be found in the [example](https://github.com/livecli/iptv/tree/master/example) folder.
+a valid file can be found in the [example](https://github.com/back-to/iptv/tree/master/example) folder.
 
 After you created the valid files ...
 
@@ -13,5 +14,5 @@ After you created the valid files ...
 
 # requirements
 
-- **this iptv files** https://github.com/livecli/iptv/archive/master.zip
+- **this iptv files** https://github.com/back-to/iptv/archive/master.zip
 - **Python** https://www.python.org/downloads/

@@ -5,8 +5,8 @@ mydata = [
             {
                 "name": "Das Erste | zattoo.com",
                 "url": "https://zattoo.com/watch/daserste",
-                "type": "livecli",
-                "livecli_data": [
+                "type": "streamlink",
+                "streamlink_data": [
                     ("zattoo-email", "EMAIL"),
                     ("zattoo-password", "PASSWORD"),
                 ],
@@ -14,8 +14,8 @@ mydata = [
             {
                 "name": "Das Erste | daserste.de",
                 "url": "https://www.daserste.de/live/index.html",
-                "type": "livecli",
-                "livecli_data": [],
+                "type": "streamlink",
+                "streamlink_data": [],
             },
             {
                 "broken": "true",
@@ -43,8 +43,8 @@ mydata = [
             {
                 "name": "ZDF | zattoo.com",
                 "url": "https://zattoo.com/watch/zdf",
-                "type": "livecli",
-                "livecli_data": [
+                "type": "streamlink",
+                "streamlink_data": [
                     ("zattoo-email", "EMAIL"),
                     ("zattoo-password", "PASSWORD"),
                 ],
