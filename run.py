@@ -3,6 +3,8 @@
 import json
 import logging
 import os.path
+import platform
+import sys
 
 from codecs import open
 from glob import glob
@@ -25,12 +27,33 @@ except Exception:
     pass
 
 
+def log_current_versions():
+    """Show current installed versions"""
+    # MAC OS X
+    if sys.platform == "darwin":
+        os_version = "macOS {0}".format(platform.mac_ver()[0])
+    # Windows
+    elif sys.platform.startswith("win"):
+        os_version = "{0} {1}".format(platform.system(), platform.release())
+    # linux / other
+    else:
+        os_version = platform.platform()
+
+    log.debug("OS:     {0}".format(os_version))
+    log.debug("Python: {0}".format(platform.python_version()))
+
+
+def percentage(a, b):
+    return int(100 * float(a) / float(b))
+
+
 class IPTV(object):
     """IPTV M3U Playlist Generator for LiveProxy
        https://github.com/back-to/iptv
     """
 
     def __init__(self):
+        log_current_versions()
         self.data = []
 
         try:
@@ -43,10 +66,17 @@ class IPTV(object):
         streams_dirs = ["private"]
         error_count = []
         for streams_dir in streams_dirs:
+            item_count = 0
             if os.path.isdir(streams_dir):
-                for _file in glob(os.path.join(streams_dir, "**", "*.json"),
-                                  recursive=True):
-                    log.info("File: {0}".format(_file))
+                _files = sorted(glob(os.path.join(streams_dir, "**", "*.json"),
+                                recursive=True))
+                _files_len = len(_files)
+                log.debug("Found {0} files in {1}".format(_files_len,
+                                                          streams_dir))
+                for _file in _files:
+                    item_count += 1
+                    log.info("{0}% - {1}".format(
+                        percentage(item_count, _files_len), _file))
                     with open(_file) as fd:
                         try:
                             self.data += [json.load(fd)]

@@ -7,6 +7,7 @@
 - New .json format, one file for one channel instead of a big python file,
   the python format will be dropped in the future.
   The JSON must be valid.
+- Added better log messages
 
 ### Changed
 
