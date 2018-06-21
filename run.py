@@ -41,13 +41,23 @@ class IPTV(object):
 
         # XXX make this changeable with the configfile
         streams_dirs = ["private"]
+        error_count = []
         for streams_dir in streams_dirs:
             if os.path.isdir(streams_dir):
                 for _file in glob(os.path.join(streams_dir, "**", "*.json"),
                                   recursive=True):
                     log.info("File: {0}".format(_file))
                     with open(_file) as fd:
-                        self.data += [json.load(fd)]
+                        try:
+                            self.data += [json.load(fd)]
+                        except json.decoder.JSONDecodeError:
+                            error_count += [_file]
+                            log.error("Invalid JSON for {0}".format(_file))
+
+        if error_count:
+            raise Exception("Invalid JSON files: {0} - {1}".format(len(error_count), ', '.join(error_count)))
+        else:
+            log.debug("All JSON files are valid.")
 
         self.run()
 
