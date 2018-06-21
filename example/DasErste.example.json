@@ -1,0 +1,36 @@
+{
+  "priority": "50",
+  "channel_data": [
+    {
+      "name": "Das Erste HD",
+      "url": "https://zattoo.com/watch/ard",
+      "type": "streamlink",
+      "streamlink_data": {
+          "zattoo-email": "EMAIL",
+          "zattoo-password": "PASSWORD"
+      }
+    },
+    {
+      "name": "Das Erste | daserste.de",
+      "url": "https://www.daserste.de/live/index.html",
+      "type": "streamlink",
+      "streamlink_data": {}
+    },
+    {
+      "broken": "true",
+      "name": "Das Erste | akamaihd.net",
+      "url": "https://example.com/123_av-p.m3u8",
+      "type": "m3u8",
+      "m3u8_data": {
+        "X-Forwarded-For": "127.0.0.1",
+        "Referer": "https://www.daserste.de/"
+      }
+    }
+  ],
+  "group": [
+    "Deutsch"
+  ],
+  "tvg-logo": "v1/das_erste.png",
+  "tvg-id": "Das Erste",
+  "tvg-name": "Das Erste"
+}

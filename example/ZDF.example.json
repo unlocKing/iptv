@@ -1,0 +1,23 @@
+{
+  "priority": "50",
+  "channel_data": [
+    {
+      "name": "ZDF | zattoo.com",
+      "url": "https://zattoo.com/watch/zdf",
+      "type": "streamlink",
+      "streamlink_data": {
+        "zattoo-email": "EMAIL",
+        "zattoo-password": "PASSWORD"
+      }
+    }
+  ],
+  "group": [
+      "Deutsch",
+      "Vollprogramm"
+  ],
+  "tvg-logo": "v1/de_zdf.png",
+  "tvg-id": "ZDF",
+  "tvg-shift": "",
+  "tvg-name": "",
+  "radio": "false"
+}

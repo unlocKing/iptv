@@ -3,6 +3,7 @@ data.py
 data/
 defaults.cfg
 playlist.m3u
+streams/*.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

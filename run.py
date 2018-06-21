@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+import json
+import os.path
+
+from codecs import open
+from glob import glob
 
 from configparser import ConfigParser
 from urllib.parse import quote_plus
@@ -19,10 +24,20 @@ class IPTV(object):
     """
 
     def __init__(self):
+        self.data = []
+
         try:
-            self.data = mydata
+            self.data += mydata
         except NameError:
             return
+
+        streams_dir = "streams"
+        if os.path.isdir(streams_dir):
+            for _file in glob(os.path.join(streams_dir, "*.json")):
+                print("[debug] File: {0}".format(_file))
+                with open(_file) as fd:
+                    self.data += [json.load(fd)]
+
         self.run()
 
     def sort_priority_name(self, item):
