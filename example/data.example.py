@@ -6,26 +6,26 @@ mydata = [
                 "name": "Das Erste | zattoo.com",
                 "url": "https://zattoo.com/watch/daserste",
                 "type": "streamlink",
-                "streamlink_data": [
-                    ("zattoo-email", "EMAIL"),
-                    ("zattoo-password", "PASSWORD"),
-                ],
+                "streamlink_data": {
+                    "zattoo-email": "EMAIL",
+                    "zattoo-password": "PASSWORD",
+                },
             },
             {
                 "name": "Das Erste | daserste.de",
                 "url": "https://www.daserste.de/live/index.html",
                 "type": "streamlink",
-                "streamlink_data": [],
+                "streamlink_data": {},
             },
             {
                 "broken": "true",
                 "name": "Das Erste | akamaihd.net",
                 "url": "https://daserstelive-lh.akamaihd.net/i/..._av-p.m3u8",
                 "type": "m3u8",
-                "m3u8_data": [
-                    ("X-Forwarded-For", "127.0.0.1"),
-                    ("Referer", "https://www.daserste.de/"),
-                ],
+                "m3u8_data": {
+                    "X-Forwarded-For": "127.0.0.1",
+                    "Referer": "https://www.daserste.de/",
+                }
             }
         ],
         "group": [
@@ -44,10 +44,10 @@ mydata = [
                 "name": "ZDF | zattoo.com",
                 "url": "https://zattoo.com/watch/zdf",
                 "type": "streamlink",
-                "streamlink_data": [
-                    ("zattoo-email", "EMAIL"),
-                    ("zattoo-password", "PASSWORD"),
-                ],
+                "streamlink_data": {
+                    "zattoo-email": "EMAIL",
+                    "zattoo-password": "PASSWORD",
+                },
             }
         ],
         "group": [

@@ -108,15 +108,35 @@ class IPTV(object):
             params["url"] = quote_plus(url)
             livecli_data = source.get("livecli_data") or source.get("streamlink_data")
             if livecli_data:
-                for k, v in livecli_data:
-                    params[quote_plus(k)] = quote_plus(v)
+                if isinstance(livecli_data, list):
+                    for _data in livecli_data:
+                        if isinstance(_data, tuple):
+                            params[quote_plus(_data[0])] = quote_plus(_data[1])
+                        elif isinstance(_data, dict):
+                            for _y in _data.keys():
+                                params[quote_plus(_y)] = quote_plus(_data[_y])
+                elif isinstance(livecli_data, dict):
+                    for _y in livecli_data.keys():
+                        params[quote_plus(_y)] = quote_plus(livecli_data[_y])
+                else:
+                    print('[error] invalid instance for streamlink data')
             line += self.base_proxy + urlencode(params)
         elif source.get("type") == "m3u8":
             params = [url]
             m3u8_data = source.get("m3u8_data")
             if m3u8_data:
-                for k, v in m3u8_data:
-                    params += ["{0}={1}".format(k, v)]
+                if isinstance(m3u8_data, list):
+                    for _data in m3u8_data:
+                        if isinstance(_data, tuple):
+                            params += ["{0}={1}".format(_data[0], _data[1])]
+                        elif isinstance(_data, dict):
+                            for _y in _data.keys():
+                                params += ["{0}={1}".format(_y, _data[_y])]
+                elif isinstance(m3u8_data, dict):
+                    for _y in m3u8_data.keys():
+                        params += ["{0}={1}".format(_y, m3u8_data[_y])]
+                else:
+                    print('[error] invalid instance for m3u8 data')
             line += "|".join(params)
         line += "\n"
         return line
