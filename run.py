@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 import json
+import logging
 import os.path
 
 from codecs import open
@@ -10,11 +11,17 @@ from configparser import ConfigParser
 from urllib.parse import quote_plus
 from urllib.parse import urlencode
 
+FORMAT = "[%(name)s][%(levelname)s] %(message)s"
+logging.basicConfig(format=FORMAT)
+log = logging.getLogger("run")
+log.setLevel(logging.DEBUG)
+
 try:
     from data import mydata
 except ModuleNotFoundError:
-    print("[ERROR] Missing data.py file")
+    log.error("Missing data.py file")
 except Exception:
+    log.debug("No mydata.py")
     pass
 
 
@@ -28,8 +35,9 @@ class IPTV(object):
 
         try:
             self.data += mydata
+            log.debug("Found mydata.py")
         except NameError:
-            return
+            pass
 
         # XXX make this changeable with the configfile
         streams_dirs = ["private"]
@@ -37,7 +45,7 @@ class IPTV(object):
             if os.path.isdir(streams_dir):
                 for _file in glob(os.path.join(streams_dir, "**", "*.json"),
                                   recursive=True):
-                    print("[debug] File: {0}".format(_file))
+                    log.info("File: {0}".format(_file))
                     with open(_file) as fd:
                         self.data += [json.load(fd)]
 
@@ -68,7 +76,7 @@ class IPTV(object):
             - priority
             - name
         """
-        print("[debug] sort data")
+        log.info("sort data")
         self.data = sorted(
             self.data, key=self.sort_priority_name, reverse=False)
         for channel in self.data:
@@ -128,7 +136,7 @@ class IPTV(object):
                     for _y in streamlink_data.keys():
                         params[quote_plus(_y)] = quote_plus(streamlink_data[_y])
                 else:
-                    print('[error] invalid instance for streamlink data')
+                    log.error('invalid instance for streamlink data')
             line += self.base_proxy + urlencode(params)
         elif source.get("type") == "m3u8":
             params = [url]
@@ -145,13 +153,13 @@ class IPTV(object):
                     for _y in m3u8_data.keys():
                         params += ["{0}={1}".format(_y, m3u8_data[_y])]
                 else:
-                    print('[error] invalid instance for m3u8 data')
+                    log.error('invalid instance for m3u8 data')
             line += "|".join(params)
         line += "\n"
         return line
 
     def split_data(self):
-        print("[debug] split data")
+        log.info("split data")
         iptv_list = []
         iptv_list += ["#EXTM3U\n"]
 
@@ -161,7 +169,7 @@ class IPTV(object):
         return "".join(iptv_list)
 
     def write_data(self, iptv_list):
-        print("[debug] write data")
+        log.info("write data")
         with open(self.config_data.get("filename"), "w") as playlist:
             playlist.write(iptv_list)
         playlist.close()
