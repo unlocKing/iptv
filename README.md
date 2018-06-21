@@ -4,12 +4,16 @@ IPTV M3U Playlist Generator for LiveProxy
 
 # Guide
 
-create a file called `defaults.cfg`
-a valid file can be found in the [example](https://github.com/back-to/iptv/tree/master/example) folder.
+1. create a file called `defaults.cfg` [example](https://github.com/back-to/iptv/blob/master/example/defaults.example.cfg)
 
-create a valid json file for every channel in the folder `streams`,
-for this example the file name will be `DasErste.json`,
+2. create a folder called `private`
 
+3. copy your wanted streams from `streams` into `private`
+   or create your own `.json` files.
+
+**Example**
+
+only valid json files will work.
 
 ```json
 {

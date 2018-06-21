@@ -14,8 +14,8 @@ try:
     from data import mydata
 except ModuleNotFoundError:
     print("[ERROR] Missing data.py file")
-except Exception as e:
-    raise e
+except Exception:
+    pass
 
 
 class IPTV(object):
@@ -31,12 +31,15 @@ class IPTV(object):
         except NameError:
             return
 
-        streams_dir = "streams"
-        if os.path.isdir(streams_dir):
-            for _file in glob(os.path.join(streams_dir, "*.json")):
-                print("[debug] File: {0}".format(_file))
-                with open(_file) as fd:
-                    self.data += [json.load(fd)]
+        # XXX make this changeable with the configfile
+        streams_dirs = ["private"]
+        for streams_dir in streams_dirs:
+            if os.path.isdir(streams_dir):
+                for _file in glob(os.path.join(streams_dir, "**", "*.json"),
+                                  recursive=True):
+                    print("[debug] File: {0}".format(_file))
+                    with open(_file) as fd:
+                        self.data += [json.load(fd)]
 
         self.run()
 
