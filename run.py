@@ -23,7 +23,7 @@ except Exception as e:
 
 
 class IPTV(object):
-    """IPTV M3U Playlist Generator for Livecli Proxy
+    """IPTV M3U Playlist Generator for LiveProxy
        https://github.com/back-to/iptv
     """
 
@@ -106,18 +106,18 @@ class IPTV(object):
         if (source.get("type") == "livecli" or source.get("type") == "streamlink"):
             params = {}
             params["url"] = quote_plus(url)
-            livecli_data = source.get("livecli_data") or source.get("streamlink_data")
-            if livecli_data:
-                if isinstance(livecli_data, list):
-                    for _data in livecli_data:
+            streamlink_data = (source.get("streamlink_data") or source.get("livecli_data"))
+            if streamlink_data:
+                if isinstance(streamlink_data, list):
+                    for _data in streamlink_data:
                         if isinstance(_data, tuple):
                             params[quote_plus(_data[0])] = quote_plus(_data[1])
                         elif isinstance(_data, dict):
                             for _y in _data.keys():
                                 params[quote_plus(_y)] = quote_plus(_data[_y])
-                elif isinstance(livecli_data, dict):
-                    for _y in livecli_data.keys():
-                        params[quote_plus(_y)] = quote_plus(livecli_data[_y])
+                elif isinstance(streamlink_data, dict):
+                    for _y in streamlink_data.keys():
+                        params[quote_plus(_y)] = quote_plus(streamlink_data[_y])
                 else:
                     print('[error] invalid instance for streamlink data')
             line += self.base_proxy + urlencode(params)
