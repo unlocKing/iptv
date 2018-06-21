@@ -1,18 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-try:
-    from configparser import ConfigParser
-except ImportError:
-    # python 2.7
-    from ConfigParser import ConfigParser
 
-try:
-    from urllib.parse import quote_plus
-    from urllib.parse import urlencode
-except ImportError:
-    # python 2.7
-    from urllib import quote_plus
-    from urllib import urlencode
+from configparser import ConfigParser
+from urllib.parse import quote_plus
+from urllib.parse import urlencode
 
 try:
     from data import mydata

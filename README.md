@@ -15,4 +15,4 @@ After you created the valid files ...
 # requirements
 
 - **this iptv files** https://github.com/back-to/iptv/archive/master.zip
-- **Python** https://www.python.org/downloads/
+- **Python 3.5+** https://www.python.org/downloads/
