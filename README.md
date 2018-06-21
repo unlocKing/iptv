@@ -11,6 +11,8 @@ IPTV M3U Playlist Generator for LiveProxy
 3. copy your wanted streams from `streams` into `private`
    or create your own `.json` files.
 
+Some of the streams will only work with [back-to/plugins](https://github.com/back-to/plugins)
+
 **Example**
 
 only valid json files will work.

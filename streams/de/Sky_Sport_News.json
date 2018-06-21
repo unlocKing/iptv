@@ -1,0 +1,17 @@
+{
+  "priority": "50",
+  "channel_data": [
+    {
+      "name": "Sky Sport News HD | akamaihd.net",
+      "url": "https://eventhlshttps-i.akamaihd.net/hls/live/263645/ssn-hd-https/indexvideo-3400.m3u8",
+      "type": "m3u8"
+    }
+  ],
+  "group": [
+    "Deutsch",
+    "Sport"
+  ],
+  "tvg-logo": "v1/de_sky_sport_news_hd.png",
+  "tvg-id": "Sky Sport News HD",
+  "tvg-name": "Sky Sport News HD"
+}

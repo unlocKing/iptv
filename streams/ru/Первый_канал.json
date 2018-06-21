@@ -1,0 +1,16 @@
+{
+  "priority": "75",
+  "channel_data": [
+    {
+      "name": "Первый канал HD | 1tv.ru",
+      "url": "https://www.1tv.ru/live",
+      "type": "streamlink"
+    }
+  ],
+  "group": [
+    "Русские"
+  ],
+  "tvg-logo": "v1/ru_perviy_1_kanal.png",
+  "tvg-id": "Первый канал",
+  "tvg-name": "Первый канал"
+}

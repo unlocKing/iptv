@@ -1,0 +1,17 @@
+{
+  "priority": "75",
+  "channel_data": [
+    {
+      "name": "Матч! | rutube.ru",
+      "url": "https://rutube.ru/video/11bbbec75a2ceb8cf446ad16813c6eec/",
+      "type": "streamlink"
+    }
+  ],
+  "group": [
+    "Русские",
+    "Спортивные"
+  ],
+  "tvg-logo": "v0/ru_match.png",
+  "tvg-id": "Матч!",
+  "tvg-name": "Матч!"
+}
