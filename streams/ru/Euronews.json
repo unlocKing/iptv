@@ -1,0 +1,15 @@
+{
+    "priority": "75",
+    "channel_data": [{
+        "name": "Euronews RU | euronews.com",
+        "url": "https://ru.euronews.com/live",
+        "type": "streamlink"
+    }],
+    "group": [
+        "Русские",
+        "Новостные"
+    ],
+    "tvg-logo": "",
+    "tvg-id": "",
+    "tvg-name": ""
+}

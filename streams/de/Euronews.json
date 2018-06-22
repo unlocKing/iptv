@@ -1,0 +1,15 @@
+{
+    "priority": "50",
+    "channel_data": [{
+        "name": "Euronews DE | euronews.com",
+        "url": "https://de.euronews.com/live",
+        "type": "streamlink"
+    }],
+    "group": [
+        "Deutsch",
+        "Nachrichten"
+    ],
+    "tvg-logo": "",
+    "tvg-id": "",
+    "tvg-name": ""
+}
