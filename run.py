@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+import argparse
 import json
 import logging
 import os.path
@@ -18,13 +19,33 @@ logging.basicConfig(format=FORMAT)
 log = logging.getLogger("run")
 log.setLevel(logging.DEBUG)
 
+
+parser = argparse.ArgumentParser(
+    usage="%(prog)s --config FILENAME",
+    description="create a valid m3u playlist for LiveProxy",
+)
+parser.add_argument(
+    "--config",
+    metavar="FILENAME",
+    default="defaults.cfg",
+    help="""
+    Load a different config file.
+
+    Default is defaults.cfg
+    """
+)
+
 try:
     from data import mydata
 except ModuleNotFoundError:
-    log.error("Missing data.py file")
+    log.debug("Missing data.py file")
 except Exception:
     log.debug("No mydata.py")
     pass
+
+
+def comma_list(values):
+    return [val.strip() for val in values.split(",")]
 
 
 def log_current_versions():
@@ -54,6 +75,10 @@ class IPTV(object):
 
     def __init__(self):
         log_current_versions()
+
+        args = parser.parse_args()
+        self.read_config(args.config)
+
         self.data = []
 
         try:
@@ -62,8 +87,7 @@ class IPTV(object):
         except NameError:
             pass
 
-        # XXX make this changeable with the configfile
-        streams_dirs = ["private"]
+        streams_dirs = comma_list(self.config_data["json-dirs"])
         error_count = []
         for streams_dir in streams_dirs:
             item_count = 0
@@ -71,8 +95,8 @@ class IPTV(object):
                 _files = sorted(glob(os.path.join(streams_dir, "**", "*.json"),
                                 recursive=True))
                 _files_len = len(_files)
-                log.debug("Found {0} files in {1}".format(_files_len,
-                                                          streams_dir))
+                log.debug("--- Found {0} files in {1} ---".format(
+                    _files_len, streams_dir))
                 for _file in _files:
                     item_count += 1
                     log.info("{0}% - {1}".format(
@@ -85,7 +109,8 @@ class IPTV(object):
                             log.error("Invalid JSON for {0}".format(_file))
 
         if error_count:
-            raise Exception("Invalid JSON files: {0} - {1}".format(len(error_count), ', '.join(error_count)))
+            raise Exception("Invalid JSON files: {0} - {1}".format(
+                len(error_count), ", ".join(error_count)))
         else:
             log.debug("All JSON files are valid.")
 
@@ -97,19 +122,22 @@ class IPTV(object):
     def sort_name(self, item):
         return (item["name"])
 
-    def read_config(self):
+    def read_config(self, config_filename):
+        log.debug("CONFIG: {0}".format(config_filename))
         self.config_data = {
             "filename": "playlist.m3u",
             "host": "127.0.0.1",
             "port": "53422",
-            "logopath": ""
+            "logopath": "",
+            "json-dirs": comma_list("private")
         }
 
         config = ConfigParser()
-        config.read(["defaults.cfg"])
+        config.read([config_filename])
         if "iptv" in config.sections():
             for key in config["iptv"]:
-                self.config_data[key] = config["iptv"][key]
+                if config["iptv"][key]:
+                    self.config_data[key] = config["iptv"][key]
 
     def sort_data(self):
         """ sort json data
@@ -176,7 +204,7 @@ class IPTV(object):
                     for _y in streamlink_data.keys():
                         params[quote_plus(_y)] = quote_plus(streamlink_data[_y])
                 else:
-                    log.error('invalid instance for streamlink data')
+                    log.error("invalid instance for streamlink data")
             line += self.base_proxy + urlencode(params)
         elif source.get("type") == "m3u8":
             params = [url]
@@ -193,7 +221,7 @@ class IPTV(object):
                     for _y in m3u8_data.keys():
                         params += ["{0}={1}".format(_y, m3u8_data[_y])]
                 else:
-                    log.error('invalid instance for m3u8 data')
+                    log.error("invalid instance for m3u8 data")
             line += "|".join(params)
         line += "\n"
         return line
@@ -215,7 +243,6 @@ class IPTV(object):
         playlist.close()
 
     def run(self):
-        self.read_config()
         self.base_proxy = "http://{0}:{1}/play/?".format(
             self.config_data.get("host"), self.config_data.get("port"))
         self.sort_data()
