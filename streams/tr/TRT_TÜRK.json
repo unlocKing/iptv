@@ -1,0 +1,16 @@
+{
+  "priority": "140",
+  "channel_data": [
+    {
+      "name": "TRT TÜRK | akamaihd.net",
+      "url": "http://trtcanlitv-lh.akamaihd.net/i/TRTTURK_1@182144/master.m3u8",
+      "type": "m3u8"
+    }
+  ],
+  "group": [
+    "Türk"
+  ],
+  "tvg-logo": "",
+  "tvg-id": "",
+  "tvg-name": ""
+}

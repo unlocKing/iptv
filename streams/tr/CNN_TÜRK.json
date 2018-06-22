@@ -1,0 +1,15 @@
+{
+    "priority": "140",
+    "channel_data": [{
+            "name": "CNN TÜRK | cnnturk.com",
+            "url": "https://www.cnnturk.com/canli-yayin",
+            "type": "streamlink"
+        }
+    ],
+    "group": [
+        "Türk"
+    ],
+    "tvg-logo": "",
+    "tvg-id": "",
+    "tvg-name": ""
+}
