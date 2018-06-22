@@ -10,5 +10,7 @@ matrix:
 script:
   - python run.py --config config/de.cfg
   - python run.py --config config/en.cfg
+  - python run.py --config config/fr.cfg
   - python run.py --config config/ru.cfg
-  - python run.py --config config/all.cfg
+  - python run.py --config config/tr.cfg
+  - python run.py --config config/vn.cfg
