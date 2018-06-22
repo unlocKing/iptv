@@ -5,6 +5,7 @@ defaults.cfg
 playlist.m3u
 private/*
 archive/*
+playlist/*.m3u
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
