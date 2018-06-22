@@ -84,7 +84,7 @@ class IPTV(object):
         try:
             self.data += mydata
             log.debug("Found mydata.py")
-        except NameError:
+        except Exception:
             pass
 
         streams_dirs = comma_list(self.config_data["json-dirs"])
@@ -123,7 +123,7 @@ class IPTV(object):
         return (item["name"])
 
     def read_config(self, config_filename):
-        log.debug("CONFIG: {0}".format(config_filename))
+        log.debug(f"CONFIG: {config_filename}")
         self.config_data = {
             "filename": "playlist.m3u",
             "host": "127.0.0.1",
@@ -161,28 +161,29 @@ class IPTV(object):
 
         tvg_id = meta.get("tvg-id")
         if tvg_id:
-            line += " tvg-id=\"{0}\"".format(tvg_id)
+            line += f" tvg-id=\"{tvg_id}\""
 
         tvg_name = meta.get("tvg-name")
         if tvg_name:
-            line += " tvg-name=\"{0}\"".format(tvg_name)
+            line += f" tvg-name=\"{tvg_name}\""
 
         tvg_shift = meta.get("tvg-shift")
         if tvg_shift:
-            line += " tvg-shift=\"{0}\"".format(tvg_shift)
+            line += f" tvg-shift=\"{tvg_shift}\""
 
         group = meta.get("group")
         if group:
-            line += " group-title=\"{0}\"".format(";".join(group))
+            group = ";".join(group)
+            line += f" group-title=\"{group}\""
 
         radio = meta.get("radio")
         if radio == "true":
-            line += " radio=\"{0}\"".format(radio)
+            line += f" radio=\"{radio}\""
 
         tvg_logo = meta.get("tvg-logo")
         if tvg_logo:
-            line += " tvg-logo=\"{0}{1}\"".format(
-                self.config_data.get("logopath"), tvg_logo)
+            logo_path = self.config_data.get("logopath")
+            line += f" tvg-logo=\"{logo_path}{tvg_logo}\""
 
         line += ",{0}\n".format(source.get("name", "???"))
 
@@ -243,8 +244,9 @@ class IPTV(object):
         playlist.close()
 
     def run(self):
-        self.base_proxy = "http://{0}:{1}/play/?".format(
-            self.config_data.get("host"), self.config_data.get("port"))
+        HOST = self.config_data.get("host")
+        PORT = self.config_data.get("port")
+        self.base_proxy = f"http://{HOST}:{PORT}/play/?"
         self.sort_data()
         iptv_list = self.split_data()
         self.write_data(iptv_list)
