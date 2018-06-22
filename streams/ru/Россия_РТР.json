@@ -1,0 +1,20 @@
+{
+    "priority": "75",
+    "channel_data": [{
+            "name": "Россия РТР | russia.tv",
+            "url": "http://live.russia.tv/index/index/channel_id/82",
+            "type": "streamlink"
+        },
+        {
+            "name": "Россия РТР | rtr-vesti.ru",
+            "url": "http://cdnmg.secure.live.rtr-vesti.ru/live/smil:rtrp.smil/chunklist_b1600000.m3u8",
+            "type": "m3u8"
+        }
+    ],
+    "group": [
+        "Русские"
+    ],
+    "tvg-logo": "",
+    "tvg-id": "",
+    "tvg-name": ""
+}

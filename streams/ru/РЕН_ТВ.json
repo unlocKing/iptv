@@ -1,0 +1,15 @@
+{
+   "priority": "75",
+   "channel_data": [{
+           "name": "РЕН ТВ HD | ren.tv",
+           "url": "https://ren.tv/live",
+           "type": "streamlink"
+       }
+   ],
+   "group": [
+       "Русские"
+   ],
+   "tvg-logo": "",
+   "tvg-id": "",
+   "tvg-name": ""
+}
