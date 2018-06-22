@@ -149,7 +149,7 @@ class IPTV(object):
             self.data, key=self.sort_priority_name, reverse=False)
         for channel in self.data:
             channel_data = sorted(
-                channel.get("channel_data"), key=self.sort_name)
+                channel["channel_data"], key=self.sort_name)
             channel["channel_data"] = channel_data
 
     def create_m3u_line(self, meta, source):
@@ -239,13 +239,13 @@ class IPTV(object):
 
     def write_data(self, iptv_list):
         log.info("write data")
-        with open(self.config_data.get("filename"), "w") as playlist:
+        with open(self.config_data["filename"], "w") as playlist:
             playlist.write(iptv_list)
         playlist.close()
 
     def run(self):
-        HOST = self.config_data.get("host")
-        PORT = self.config_data.get("port")
+        HOST = self.config_data["host"]
+        PORT = self.config_data["port"]
         self.base_proxy = f"http://{HOST}:{PORT}/play/?"
         self.sort_data()
         iptv_list = self.split_data()
