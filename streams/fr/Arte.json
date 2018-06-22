@@ -1,0 +1,20 @@
+{
+    "priority": "60",
+    "channel_data": [{
+            "name": "Arte HD | arte.tv",
+            "url": "https://www.arte.tv/fr/direct/",
+            "type": "streamlink"
+        },
+        {
+            "name": "Arte HD | ardmediathek.de",
+            "url": "https://www.ardmediathek.de/tv/ARTE-franz%C3%B6sisch/live?kanal=36104240",
+            "type": "streamlink"
+        }
+    ],
+    "group": [
+        "Français"
+    ],
+    "tvg-logo": "",
+    "tvg-id": "",
+    "tvg-name": ""
+}

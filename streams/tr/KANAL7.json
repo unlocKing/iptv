@@ -1,0 +1,15 @@
+{
+    "priority": "140",
+    "channel_data": [{
+            "name": "KANAL7 | kanal7.com",
+            "url": "http://www.kanal7.com/canli-izle",
+            "type": "streamlink"
+        }
+    ],
+    "group": [
+        "Türk"
+    ],
+    "tvg-logo": "",
+    "tvg-id": "",
+    "tvg-name": ""
+}

@@ -1,0 +1,15 @@
+{
+    "priority": "50",
+    "channel_data": [{
+        "name": "PHOENIX HD | zdf.de",
+        "url": "https://www.zdf.de/sender/phoenix/phoenix-live-beitrag-100.html",
+        "type": "streamlink"
+    }],
+    "group": [
+        "Deutsch",
+        "Nachrichten"
+    ],
+    "tvg-logo": "",
+    "tvg-id": "",
+    "tvg-name": ""
+}

@@ -1,0 +1,15 @@
+{
+    "priority": "50",
+    "channel_data": [{
+        "name": "Tagesschau24 | ardmediathek.de",
+        "url": "https://www.ardmediathek.de/tv/tagesschau24/live?kanal=5878",
+        "type": "streamlink"
+    }],
+    "group": [
+        "Deutsch",
+        "Nachrichten"
+    ],
+    "tvg-logo": "",
+    "tvg-id": "",
+    "tvg-name": ""
+}

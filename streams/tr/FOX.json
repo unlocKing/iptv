@@ -1,0 +1,15 @@
+{
+    "priority": "140",
+    "channel_data": [{
+            "name": "FOX | fox.com.tr",
+            "url": "https://www.fox.com.tr/canli-yayin",
+            "type": "streamlink"
+        }
+    ],
+    "group": [
+        "Türk"
+    ],
+    "tvg-logo": "",
+    "tvg-id": "",
+    "tvg-name": ""
+}

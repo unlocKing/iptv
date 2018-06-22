@@ -1,0 +1,18 @@
+{
+  "priority": "50",
+  "channel_data": [
+    {
+      "name": "ZDFinfo HD | zdf.de",
+      "url": "https://www.zdf.de/dokumentation/zdfinfo-doku/zdfinfo-live-beitrag-100.html",
+      "type": "streamlink"
+    }
+  ],
+  "group": [
+      "Deutsch",
+      "Vollprogramm"
+  ],
+  "tvg-logo": "",
+  "tvg-id": "",
+  "tvg-shift": "",
+  "tvg-name": ""
+}

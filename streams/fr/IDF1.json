@@ -1,0 +1,15 @@
+{
+    "priority": "60",
+    "channel_data": [{
+            "name": "IDF1 | idf1.fr",
+            "url": "http://www.idf1.fr/live",
+            "type": "streamlink"
+        }
+    ],
+    "group": [
+        "Français"
+    ],
+    "tvg-logo": "",
+    "tvg-id": "",
+    "tvg-name": ""
+}

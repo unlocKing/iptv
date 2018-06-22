@@ -1,0 +1,15 @@
+{
+    "priority": "140",
+    "channel_data": [{
+            "name": "TV8 | tv8.com.tr",
+            "url": "https://www.tv8.com.tr/canli-yayin",
+            "type": "streamlink"
+        }
+    ],
+    "group": [
+        "Türk"
+    ],
+    "tvg-logo": "",
+    "tvg-id": "",
+    "tvg-name": ""
+}
