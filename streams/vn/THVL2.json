@@ -1,7 +1,7 @@
 {
     "priority": "160",
     "channel_data": [{
-            "name": "THVL 1 HD | thvli.vn",
+            "name": "THVL 2 HD | thvli.vn",
             "url": "http://thvli.vn/live/thvl2-hd/bc60bddb-99ac-416e-be26-eb4d0852f5cc",
             "type": "streamlink"
         }

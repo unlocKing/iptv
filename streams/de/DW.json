@@ -1,0 +1,15 @@
+{
+    "priority": "50",
+    "channel_data": [{
+      "name": "DW Deutsch | youtube.com",
+      "url": "https://www.youtube.com/user/deutschewelle",
+      "type": "streamlink"
+    }],
+    "group": [
+      "Deutsch",
+      "Nachrichten"
+    ],
+    "tvg-logo": "",
+    "tvg-id": "",
+    "tvg-name": ""
+}

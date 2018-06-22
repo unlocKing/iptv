@@ -1,8 +1,8 @@
 {
     "priority": "54",
     "channel_data": [{
-        "name": "Euronews EN | euronews.com",
-        "url": "https://www.euronews.com/live",
+        "name": "SkyNews | youtube.com",
+        "url": "https://www.youtube.com/channel/UCoMdktPbSTixAyNGwb-UYkQ",
         "type": "streamlink"
     }],
     "group": [
