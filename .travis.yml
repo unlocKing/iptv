@@ -3,9 +3,16 @@ language: python
 matrix:
   include:
   - python: '3.6'
+    env: UPLOAD_M3U=yes
   - python: '3.7-dev'
   allow_failures:
   - python: '3.7-dev'
+
+before_install:
+  - pip install --upgrade pip setuptools
+  - if [[ $UPLOAD_M3U == 'yes' ]]; then
+      pip install doctr;
+    fi
 
 script:
   - python run.py --config config/de.cfg
@@ -14,3 +21,14 @@ script:
   - python run.py --config config/ru.cfg
   - python run.py --config config/tr.cfg
   - python run.py --config config/vn.cfg
+
+after_success:
+  - set -e
+  - if [[ $UPLOAD_M3U == 'yes' && $TRAVIS_REPO_SLUG == 'back-to/iptv' ]]; then doctr deploy iptv; fi
+
+doctr:
+  build-tags: True
+  deploy-repo: liveproxy/liveproxy.github.io
+  key-path: deploy_key_doctr.enc
+  require-master: True
+  built-docs: playlist/
