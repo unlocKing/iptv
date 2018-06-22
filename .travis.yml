@@ -1,0 +1,15 @@
+language: python
+
+matrix:
+  include:
+  - python: '3.5'
+  - python: '3.6'
+  - python: '3.7-dev'
+  allow_failures:
+  - python: '3.7-dev'
+
+script:
+  - python run.py --config config/de.cfg
+  - python run.py --config config/en.cfg
+  - python run.py --config config/ru.cfg
+  - python run.py --config config/all.cfg
