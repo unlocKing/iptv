@@ -43,7 +43,6 @@ only valid json files will work.
 After you created all valid files ...
 
 - Run `python run.py` to create a playlist.m3u
-- Run `python upload.py` to upload the m3u file to a ftp server
 
 # requirements
 
