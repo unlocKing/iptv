@@ -1,6 +1,4 @@
 # IPTV
-data.py
-data/
 defaults.cfg
 playlist.m3u
 private/*
