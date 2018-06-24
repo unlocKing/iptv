@@ -5,6 +5,8 @@ private/*
 archive/*
 playlist/*.m3u
 
+.pytest_cache/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
