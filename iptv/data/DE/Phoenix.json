@@ -1,0 +1,41 @@
+{
+  "name": "Phoenix",
+  "region": "DE",
+  "language": "deu",
+  "streams": [
+    {
+      "url": "https://www.zdf.de/sender/phoenix/phoenix-live-beitrag-100.html",
+      "usage": "streamlink",
+      "streamlink_data": {},
+      "direct_data": {},
+      "attributes": {
+        "geolocked": true,
+        "authentication": false,
+        "subscription": false,
+        "drm": false,
+        "hd": true
+      }
+    },
+    {
+      "url": "https://www.ardmediathek.de/tv/Phoenix/live?kanal=5888",
+      "usage": "streamlink",
+      "streamlink_data": {},
+      "direct_data": {},
+      "attributes": {
+        "geolocked": true,
+        "authentication": false,
+        "subscription": false,
+        "drm": false,
+        "hd": true
+      }
+    }
+  ],
+  "m3u": {
+    "logo": "https://raw.githubusercontent.com/python-iptv/squaredTV/master/squaredTV_generic/Phoenix.png",
+    "id": "",
+    "shift": "",
+    "name": "",
+    "radio": false,
+    "group": ["Nachrichten"]
+  }
+}

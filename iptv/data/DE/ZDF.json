@@ -1,0 +1,28 @@
+{
+  "name": "ZDF",
+  "region": "DE",
+  "language": "deu",
+  "streams": [
+    {
+      "url": "https://www.zdf.de/sender/zdf/zdf-live-beitrag-100.html",
+      "usage": "streamlink",
+      "streamlink_data": {},
+      "direct_data": {},
+      "attributes": {
+        "geolocked": true,
+        "authentication": false,
+        "subscription": false,
+        "drm": false,
+        "hd": true
+      }
+    }
+  ],
+  "m3u": {
+    "logo": "https://raw.githubusercontent.com/python-iptv/squaredTV/master/squaredTV_generic/ZDF.png",
+    "id": "",
+    "shift": "",
+    "name": "",
+    "radio": false,
+    "group": [""]
+  }
+}

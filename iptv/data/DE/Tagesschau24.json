@@ -1,0 +1,28 @@
+{
+  "name": "Tagesschau24",
+  "region": "DE",
+  "language": "deu",
+  "streams": [
+    {
+      "url": "https://www.ardmediathek.de/tv/tagesschau24/live?kanal=5878",
+      "usage": "streamlink",
+      "streamlink_data": {},
+      "direct_data": {},
+      "attributes": {
+        "geolocked": true,
+        "authentication": false,
+        "subscription": false,
+        "drm": false,
+        "hd": true
+      }
+    }
+  ],
+  "m3u": {
+    "logo": "https://raw.githubusercontent.com/python-iptv/squaredTV/master/squaredTV_generic/Tagesschau24.png",
+    "id": "",
+    "shift": "",
+    "name": "",
+    "radio": false,
+    "group": ["Nachrichten"]
+  }
+}
