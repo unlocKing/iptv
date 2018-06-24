@@ -1,0 +1,28 @@
+{
+  "name": "НТВ",
+  "region": "RU",
+  "language": "rus",
+  "streams": [
+    {
+      "url": "https://www.youtube.com/channel/UCsA_vkmuyIRlYYXeJueyIJQ",
+      "usage": "streamlink",
+      "streamlink_data": {},
+      "direct_data": {},
+      "attributes": {
+        "geolocked": false,
+        "authentication": false,
+        "subscription": false,
+        "drm": false,
+        "hd": true
+      }
+    }
+  ],
+  "m3u": {
+    "logo": "https://raw.githubusercontent.com/python-iptv/tvlogos/master/dark/%D0%9D%D0%A2%D0%92.png",
+    "id": "",
+    "shift": "",
+    "name": "",
+    "radio": false,
+    "group": [""]
+  }
+}

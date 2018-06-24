@@ -31,7 +31,7 @@ Country name is defined in ISO 3166-1 alpha-2
     "id": "",        /* (String) Optional: tvg-id */
     "shift": "",     /* (String) Optional: tvg-shift */
     "name": "",      /* (String) Optional: tvg-name */
-    "radio": "",     /* (Boolean) Optional: radio; Default=false */
+    "radio": false,  /* (Boolean) Optional: radio; Default=false */
     "group": [""]    /* (String) Optional: group-title */
   }
 }
@@ -64,7 +64,7 @@ Country name is defined in ISO 3166-1 alpha-2
     "id": "",
     "shift": "",
     "name": "",
-    "radio": "",
+    "radio": false,
     "group": [""]
   }
 }
@@ -90,7 +90,7 @@ Country name is defined in ISO 3166-1 alpha-2
     "id": "",
     "shift": "",
     "name": "",
-    "radio": "",
+    "radio": false,
     "group": [""]
   }
 }

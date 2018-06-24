@@ -1,0 +1,28 @@
+{
+  "name": "РЕН ТВ",
+  "region": "RU",
+  "language": "rus",
+  "streams": [
+    {
+      "url": "https://ren.tv/live",
+      "usage": "streamlink",
+      "streamlink_data": {},
+      "direct_data": {},
+      "attributes": {
+        "geolocked": false,
+        "authentication": false,
+        "subscription": false,
+        "drm": false,
+        "hd": true
+      }
+    }
+  ],
+  "m3u": {
+    "logo": "https://raw.githubusercontent.com/python-iptv/tvlogos/master/dark/%D0%A0%D0%95%D0%9D%20%D0%A2%D0%92.png",
+    "id": "",
+    "shift": "",
+    "name": "",
+    "radio": false,
+    "group": [""]
+  }
+}

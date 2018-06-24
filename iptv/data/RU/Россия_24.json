@@ -1,0 +1,41 @@
+{
+  "name": "Россия 24",
+  "region": "RU",
+  "language": "rus",
+  "streams": [
+    {
+      "url": "https://live.russia.tv/index/index/channel_id/3",
+      "usage": "streamlink",
+      "streamlink_data": {},
+      "direct_data": {},
+      "attributes": {
+        "geolocked": false,
+        "authentication": false,
+        "subscription": false,
+        "drm": false,
+        "hd": false
+      }
+    },
+    {
+      "url": "http://cdnmg.secure.live.rtr-vesti.ru/live/smil:r24.smil/chunklist_b800000.m3u8",
+      "usage": "direct",
+      "streamlink_data": {},
+      "direct_data": {},
+      "attributes": {
+        "geolocked": false,
+        "authentication": false,
+        "subscription": false,
+        "drm": false,
+        "hd": false
+      }
+    }
+  ],
+  "m3u": {
+    "logo": "https://raw.githubusercontent.com/python-iptv/tvlogos/master/dark/%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D1%8F-24.png",
+    "id": "",
+    "shift": "",
+    "name": "",
+    "radio": false,
+    "group": [""]
+  }
+}
