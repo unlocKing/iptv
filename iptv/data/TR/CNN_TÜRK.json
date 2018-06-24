@@ -1,0 +1,28 @@
+{
+  "name": "CNN TÜRK",
+  "region": "TR",
+  "language": "tur",
+  "streams": [
+    {
+      "url": "https://www.cnnturk.com/canli-yayin",
+      "usage": "streamlink",
+      "streamlink_data": {},
+      "direct_data": {},
+      "attributes": {
+        "geolocked": false,
+        "authentication": false,
+        "subscription": false,
+        "drm": false,
+        "hd": false
+      }
+    }
+  ],
+  "m3u": {
+    "logo": "",
+    "id": "",
+    "shift": "",
+    "name": "",
+    "radio": false,
+    "group": [""]
+  }
+}
