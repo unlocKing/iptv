@@ -1,0 +1,28 @@
+{
+  "name": "SkyNews",
+  "region": "GB",
+  "language": "eng",
+  "streams": [
+    {
+      "url": "https://www.youtube.com/channel/UCoMdktPbSTixAyNGwb-UYkQ",
+      "usage": "streamlink",
+      "streamlink_data": {},
+      "direct_data": {},
+      "attributes": {
+        "geolocked": false,
+        "authentication": false,
+        "subscription": false,
+        "drm": false,
+        "hd": true
+      }
+    }
+  ],
+  "m3u": {
+    "logo": "",
+    "id": "",
+    "shift": "",
+    "name": "",
+    "radio": false,
+    "group": ["News"]
+  }
+}
