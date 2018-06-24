@@ -1,0 +1,28 @@
+{
+  "name": "Arte",
+  "region": "FR",
+  "language": "fra",
+  "streams": [
+    {
+      "url": "https://www.arte.tv/fr/direct/",
+      "usage": "streamlink",
+      "streamlink_data": {},
+      "direct_data": {},
+      "attributes": {
+        "geolocked": false,
+        "authentication": false,
+        "subscription": false,
+        "drm": false,
+        "hd": true
+      }
+    }
+  ],
+  "m3u": {
+    "logo": "https://raw.githubusercontent.com/python-iptv/squaredTV/master/squaredTV_generic/Arte.png",
+    "id": "",
+    "shift": "",
+    "name": "",
+    "radio": false,
+    "group": [""]
+  }
+}
