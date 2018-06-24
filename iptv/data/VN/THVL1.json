@@ -1,0 +1,28 @@
+{
+  "name": "THVL 1",
+  "region": "VN",
+  "language": "vie",
+  "streams": [
+    {
+      "url": "http://thvli.vn/live/thvl1-hd/aab94d1f-44e1-4992-8633-6d46da08db42",
+      "usage": "streamlink",
+      "streamlink_data": {},
+      "direct_data": {},
+      "attributes": {
+        "geolocked": true,
+        "authentication": false,
+        "subscription": false,
+        "drm": false,
+        "hd": true
+      }
+    }
+  ],
+  "m3u": {
+    "logo": "",
+    "id": "",
+    "shift": "",
+    "name": "",
+    "radio": false,
+    "group": [""]
+  }
+}
