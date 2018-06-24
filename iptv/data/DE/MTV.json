@@ -1,11 +1,11 @@
 {
-  "name": "Euronews",
+  "name": "MTV Germany",
   "region": "DE",
   "language": "deu",
   "streams": [
     {
-      "url": "https://de.euronews.com/live",
-      "usage": "streamlink",
+      "url": "http://unilivemtveu-lh.akamaihd.net/i/mtvde_1@134922/index_3500_av-p.m3u8",
+      "usage": "direct",
       "streamlink_data": {},
       "direct_data": {},
       "attributes": {
@@ -18,11 +18,11 @@
     }
   ],
   "m3u": {
-    "logo": "https://raw.githubusercontent.com/python-iptv/resources/master/logos/v1/eu_euronews.png",
+    "logo": "https://raw.githubusercontent.com/python-iptv/resources/master/logos/v2/de_mtv.png",
     "id": "",
     "shift": "",
     "name": "",
     "radio": false,
-    "group": ["Nachrichten"]
+    "group": [""]
   }
 }

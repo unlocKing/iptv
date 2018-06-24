@@ -1,28 +1,28 @@
 {
-  "name": "Euronews",
+  "name": "Sport1",
   "region": "DE",
   "language": "deu",
   "streams": [
     {
-      "url": "https://de.euronews.com/live",
+      "url": "https://tv.sport1.de/sport1/",
       "usage": "streamlink",
       "streamlink_data": {},
       "direct_data": {},
       "attributes": {
-        "geolocked": false,
+        "geolocked": true,
         "authentication": false,
         "subscription": false,
         "drm": false,
-        "hd": true
+        "hd": false
       }
     }
   ],
   "m3u": {
-    "logo": "https://raw.githubusercontent.com/python-iptv/resources/master/logos/v1/eu_euronews.png",
+    "logo": "https://raw.githubusercontent.com/python-iptv/resources/master/logos/v1/de_sport_1_hd.png",
     "id": "",
     "shift": "",
     "name": "",
     "radio": false,
-    "group": ["Nachrichten"]
+    "group": ["Sport"]
   }
 }

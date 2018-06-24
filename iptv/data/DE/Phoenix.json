@@ -13,7 +13,7 @@
         "authentication": false,
         "subscription": false,
         "drm": false,
-        "hd": true
+        "hd": false
       }
     },
     {
@@ -26,7 +26,20 @@
         "authentication": false,
         "subscription": false,
         "drm": false,
-        "hd": true
+        "hd": false
+      }
+    },
+    {
+      "url": "https://zdf0910-lh.akamaihd.net/i/de09_v1@392871/master.m3u8",
+      "usage": "direct",
+      "streamlink_data": {},
+      "direct_data": {},
+      "attributes": {
+        "geolocked": true,
+        "authentication": false,
+        "subscription": false,
+        "drm": false,
+        "hd": false
       }
     }
   ],

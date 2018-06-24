@@ -1,11 +1,11 @@
 {
-  "name": "Euronews",
+  "name": "DELUXE MUSIC",
   "region": "DE",
   "language": "deu",
   "streams": [
     {
-      "url": "https://de.euronews.com/live",
-      "usage": "streamlink",
+      "url": "http://streaming-02.mivitec.net/live/smil:test.smil/playlist.m3u8",
+      "usage": "direct",
       "streamlink_data": {},
       "direct_data": {},
       "attributes": {
@@ -13,16 +13,16 @@
         "authentication": false,
         "subscription": false,
         "drm": false,
-        "hd": true
+        "hd": false
       }
     }
   ],
   "m3u": {
-    "logo": "https://raw.githubusercontent.com/python-iptv/resources/master/logos/v1/eu_euronews.png",
+    "logo": "https://raw.githubusercontent.com/python-iptv/resources/master/logos/v2/deluxemusic.de.png",
     "id": "",
     "shift": "",
     "name": "",
     "radio": false,
-    "group": ["Nachrichten"]
+    "group": ["Musik"]
   }
 }

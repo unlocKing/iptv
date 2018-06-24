@@ -1,11 +1,11 @@
 {
-  "name": "ZDF",
+  "name": "SWR Rheinland-Pfalz",
   "region": "DE",
   "language": "deu",
   "streams": [
     {
-      "url": "https://www.zdf.de/sender/zdf/zdf-live-beitrag-100.html",
-      "usage": "streamlink",
+      "url": "https://swrrp-lh.akamaihd.net/i/swrrp_live@196739/index_3584_av-p.m3u8",
+      "usage": "direct",
       "streamlink_data": {},
       "direct_data": {},
       "attributes": {
@@ -17,8 +17,8 @@
       }
     },
     {
-      "url": "https://zdf1314-lh.akamaihd.net/i/de14_v1@392878/index_3096_av-b.m3u8",
-      "usage": "direct",
+      "url": "https://www.ardmediathek.de/tv/SWR-Rheinland-Pfalz/live?kanal=5872",
+      "usage": "streamlink",
       "streamlink_data": {},
       "direct_data": {},
       "attributes": {
@@ -31,7 +31,7 @@
     }
   ],
   "m3u": {
-    "logo": "https://raw.githubusercontent.com/python-iptv/squaredTV/master/squaredTV_generic/ZDF.png",
+    "logo": "https://raw.githubusercontent.com/python-iptv/resources/master/logos/v1/de_swr.png",
     "id": "",
     "shift": "",
     "name": "",

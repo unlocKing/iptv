@@ -1,15 +1,15 @@
 {
-  "name": "ZDF",
+  "name": "Welt",
   "region": "DE",
   "language": "deu",
   "streams": [
     {
-      "url": "https://www.zdf.de/sender/zdf/zdf-live-beitrag-100.html",
+      "url": "https://www.welt.de/tv-programm-live-stream/",
       "usage": "streamlink",
       "streamlink_data": {},
       "direct_data": {},
       "attributes": {
-        "geolocked": true,
+        "geolocked": false,
         "authentication": false,
         "subscription": false,
         "drm": false,
@@ -17,12 +17,12 @@
       }
     },
     {
-      "url": "https://zdf1314-lh.akamaihd.net/i/de14_v1@392878/index_3096_av-b.m3u8",
+      "url": "http://live2weltcms-lh.akamaihd.net/i/Live2WeltCMS_1@444563/index_1_av-p.m3u8",
       "usage": "direct",
       "streamlink_data": {},
       "direct_data": {},
       "attributes": {
-        "geolocked": true,
+        "geolocked": false,
         "authentication": false,
         "subscription": false,
         "drm": false,
@@ -31,11 +31,11 @@
     }
   ],
   "m3u": {
-    "logo": "https://raw.githubusercontent.com/python-iptv/squaredTV/master/squaredTV_generic/ZDF.png",
+    "logo": "https://raw.githubusercontent.com/python-iptv/resources/master/logos/v1/de_n24.png",
     "id": "",
     "shift": "",
     "name": "",
     "radio": false,
-    "group": [""]
+    "group": ["Nachrichten"]
   }
 }

@@ -1,23 +1,10 @@
 {
-  "name": "ZDF",
+  "name": "BR Fernsehen Nord",
   "region": "DE",
   "language": "deu",
   "streams": [
     {
-      "url": "https://www.zdf.de/sender/zdf/zdf-live-beitrag-100.html",
-      "usage": "streamlink",
-      "streamlink_data": {},
-      "direct_data": {},
-      "attributes": {
-        "geolocked": true,
-        "authentication": false,
-        "subscription": false,
-        "drm": false,
-        "hd": true
-      }
-    },
-    {
-      "url": "https://zdf1314-lh.akamaihd.net/i/de14_v1@392878/index_3096_av-b.m3u8",
+      "url": "https://srlive24-lh.akamaihd.net/i/sr_universal02@107595/master.m3u8",
       "usage": "direct",
       "streamlink_data": {},
       "direct_data": {},
@@ -26,12 +13,25 @@
         "authentication": false,
         "subscription": false,
         "drm": false,
-        "hd": true
+        "hd": false
+      }
+    },
+    {
+      "url": "https://www.ardmediathek.de/tv/BR-Fernsehen-Nord/live?kanal=21537244",
+      "usage": "streamlink",
+      "streamlink_data": {},
+      "direct_data": {},
+      "attributes": {
+        "geolocked": true,
+        "authentication": false,
+        "subscription": false,
+        "drm": false,
+        "hd": false
       }
     }
   ],
   "m3u": {
-    "logo": "https://raw.githubusercontent.com/python-iptv/squaredTV/master/squaredTV_generic/ZDF.png",
+    "logo": "https://raw.githubusercontent.com/python-iptv/resources/master/logos/v1/de_sr.png",
     "id": "",
     "shift": "",
     "name": "",
