@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-schema = {
+JSON_SCHEMA = {
     '$schema': 'http://json-schema.org/draft-06/schema#',
     'type': 'object',
     'title': 'IPTV Channel',
@@ -123,5 +123,5 @@ schema = {
 }
 
 __all__ = [
-    'schema'
+    'JSON_SCHEMA',
 ]

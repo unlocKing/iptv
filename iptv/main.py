@@ -7,7 +7,7 @@ import os.path
 from fastjsonschema import JsonSchemaException, compile
 from pathlib import Path
 
-from iptv.constants import schema
+from iptv.constants import JSON_SCHEMA
 
 FORMAT = '[%(name)s][%(levelname)s] %(message)s'
 logging.basicConfig(format=FORMAT)
@@ -20,7 +20,7 @@ def main():
     p = Path(os.path.dirname(__file__))
     json_files = list(p.glob('data/**/*.json'))
 
-    validate = compile(schema)
+    validate = compile(JSON_SCHEMA)
 
     log.info('Load JSON data')
     data = []
