@@ -11,6 +11,7 @@ matrix:
 
 before_install:
   - pip install --upgrade pip setuptools
+  - pip install git+https://github.com/seznam/python-fastjsonschema.git
   - pip install -r requirements-dev.txt
   - if [[ $UPLOAD_M3U == 'yes' ]]; then
       pip install doctr;
@@ -19,8 +20,8 @@ before_install:
 install:
   - pip install -e .
 
-# script:
-#  - pytest --cov
+script:
+  - pytest --cov
 
 after_success:
   - set -e
