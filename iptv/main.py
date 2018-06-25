@@ -7,7 +7,7 @@ import os.path
 from fastjsonschema import JsonSchemaException, compile
 from pathlib import Path
 
-from iptv.utils import schema
+from iptv.constants import schema
 
 FORMAT = '[%(name)s][%(levelname)s] %(message)s'
 logging.basicConfig(format=FORMAT)
