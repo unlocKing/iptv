@@ -1,0 +1,28 @@
+{
+  "name": "ТНТ4",
+  "region": "RU",
+  "language": "rus",
+  "streams": [
+    {
+      "url": "https://rutube.ru/video/c801a7087e29a097192d74c270fbc6c1",
+      "usage": "streamlink",
+      "streamlink_data": {},
+      "direct_data": {},
+      "attributes": {
+        "geolocked": false,
+        "authentication": false,
+        "subscription": false,
+        "drm": false,
+        "hd": true
+      }
+    }
+  ],
+  "m3u": {
+    "logo": "https://raw.githubusercontent.com/python-iptv/tvlogos/master/dark/%D0%A2%D0%9D%D0%A24.png",
+    "id": "",
+    "shift": "",
+    "name": "",
+    "radio": false,
+    "group": [""]
+  }
+}

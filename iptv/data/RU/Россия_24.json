@@ -5,7 +5,7 @@
   "streams": [
     {
       "url": "https://live.russia.tv/index/index/channel_id/3",
-      "usage": "streamlink",
+      "usage": "web",
       "streamlink_data": {},
       "direct_data": {},
       "attributes": {
@@ -17,7 +17,7 @@
       }
     },
     {
-      "url": "http://cdnmg.secure.live.rtr-vesti.ru/live/smil:r24.smil/chunklist_b800000.m3u8",
+      "url": "http://cdnmg.secure.live.rtr-vesti.ru/live/smil:r24.smil/master.m3u8",
       "usage": "direct",
       "streamlink_data": {},
       "direct_data": {},

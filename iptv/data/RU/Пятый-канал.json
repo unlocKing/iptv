@@ -1,0 +1,28 @@
+{
+  "name": "Пятый канал",
+  "region": "RU",
+  "language": "rus",
+  "streams": [
+    {
+      "url": "https://www.5-tv.ru/live/",
+      "usage": "streamlink",
+      "streamlink_data": {},
+      "direct_data": {},
+      "attributes": {
+        "geolocked": false,
+        "authentication": false,
+        "subscription": false,
+        "drm": false,
+        "hd": false
+      }
+    }
+  ],
+  "m3u": {
+    "logo": "https://raw.githubusercontent.com/python-iptv/tvlogos/master/dark/5%20%D0%BA%D0%B0%D0%BD%D0%B0%D0%BB.png",
+    "id": "",
+    "shift": "",
+    "name": "",
+    "radio": false,
+    "group": [""]
+  }
+}

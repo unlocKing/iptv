@@ -1,5 +1,5 @@
 {
-  "name": "BR Fernsehen Nord",
+  "name": "SR Fernsehen Nord",
   "region": "DE",
   "language": "deu",
   "streams": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "url": "https://www.ardmediathek.de/tv/BR-Fernsehen-Nord/live?kanal=21537244",
+      "url": "https://www.ardmediathek.de/tv/SR-Fernsehen/live?kanal=5870",
       "usage": "streamlink",
       "streamlink_data": {},
       "direct_data": {},

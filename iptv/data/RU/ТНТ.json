@@ -1,0 +1,28 @@
+{
+  "name": "ТНТ",
+  "region": "RU",
+  "language": "rus",
+  "streams": [
+    {
+      "url": "https://rutube.ru/video/546602986e6a424d74d594876ddb3f04/",
+      "usage": "streamlink",
+      "streamlink_data": {},
+      "direct_data": {},
+      "attributes": {
+        "geolocked": true,
+        "authentication": false,
+        "subscription": false,
+        "drm": false,
+        "hd": true
+      }
+    }
+  ],
+  "m3u": {
+    "logo": "https://raw.githubusercontent.com/python-iptv/tvlogos/master/dark/%D0%A2%D0%9D%D0%A2.png",
+    "id": "",
+    "shift": "",
+    "name": "",
+    "radio": false,
+    "group": [""]
+  }
+}

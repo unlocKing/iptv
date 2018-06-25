@@ -15,6 +15,19 @@
         "drm": false,
         "hd": true
       }
+    },
+    {
+      "url": "https://rutube.ru/video/42a58f895935bbf495089a2e1fe15e46/",
+      "usage": "streamlink",
+      "streamlink_data": {},
+      "direct_data": {},
+      "attributes": {
+        "geolocked": false,
+        "authentication": false,
+        "subscription": false,
+        "drm": false,
+        "hd": true
+      }
     }
   ],
   "m3u": {

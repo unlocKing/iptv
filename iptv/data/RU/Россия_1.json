@@ -13,12 +13,25 @@
         "authentication": false,
         "subscription": false,
         "drm": false,
-        "hd": true
+        "hd": false
       }
     },
     {
-      "url": "http://cdnmg.secure.live.rtr-vesti.ru/live/smil:rhd.smil/chunklist_b1600000.m3u8",
+      "url": "http://cdnmg.secure.live.rtr-vesti.ru/live/smil:rhd.smil/master.m3u8",
       "usage": "direct",
+      "streamlink_data": {},
+      "direct_data": {},
+      "attributes": {
+        "geolocked": false,
+        "authentication": false,
+        "subscription": false,
+        "drm": false,
+        "hd": false
+      }
+    },
+    {
+      "url": "https://rutube.ru/video/0d95f897c5892509bf966ba6d884fd23/",
+      "usage": "streamlink",
       "streamlink_data": {},
       "direct_data": {},
       "attributes": {

@@ -1,0 +1,28 @@
+{
+  "name": "СУПЕР",
+  "region": "RU",
+  "language": "rus",
+  "streams": [
+    {
+      "url": "https://rutube.ru/video/dfbae35e461b25d827319d93ed5c1d76/",
+      "usage": "streamlink",
+      "streamlink_data": {},
+      "direct_data": {},
+      "attributes": {
+        "geolocked": false,
+        "authentication": false,
+        "subscription": false,
+        "drm": false,
+        "hd": true
+      }
+    }
+  ],
+  "m3u": {
+    "logo": "",
+    "id": "",
+    "shift": "",
+    "name": "",
+    "radio": false,
+    "group": [""]
+  }
+}
