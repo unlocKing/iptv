@@ -49,6 +49,6 @@
     "shift": "",
     "name": "",
     "radio": false,
-    "group": ["Nachrichten"]
+    "group": "Nachrichten"
   }
 }

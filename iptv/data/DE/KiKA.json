@@ -49,6 +49,6 @@
     "shift": "",
     "name": "",
     "radio": false,
-    "group": ["Kinder"]
+    "group": "Kinder"
   }
 }

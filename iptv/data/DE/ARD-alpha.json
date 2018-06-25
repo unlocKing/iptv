@@ -36,6 +36,6 @@
     "shift": "",
     "name": "",
     "radio": false,
-    "group": ["Bildung"]
+    "group": "Bildung"
   }
 }

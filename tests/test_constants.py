@@ -38,7 +38,7 @@ class TestConstants(unittest.TestCase):
                 "shift": "2",
                 "name": "TV",
                 "radio": false,
-                "group": ["News"]
+                "group": "News"
               }
             }
             ''',
@@ -70,7 +70,7 @@ class TestConstants(unittest.TestCase):
                 "shift": "2",
                 "name": "TV",
                 "radio": false,
-                "group": ["News"]
+                "group": "News"
               }
             }
             ''',

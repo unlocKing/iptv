@@ -32,7 +32,7 @@ Country name is defined in ISO 3166-1 alpha-2
     "shift": "",     /* (String) Optional: tvg-shift */
     "name": "",      /* (String) Optional: tvg-name */
     "radio": false,  /* (Boolean) Optional: radio; Default=false */
-    "group": [""]    /* (String) Optional: group-title */
+    "group": ""      /* (String) Optional: Group Titles separated by a semicolon; eg. News;Sports */
   }
 }
 ```
@@ -65,7 +65,7 @@ Country name is defined in ISO 3166-1 alpha-2
     "shift": "",
     "name": "",
     "radio": false,
-    "group": [""]
+    "group": ""
   }
 }
 ```
@@ -91,7 +91,7 @@ Country name is defined in ISO 3166-1 alpha-2
     "shift": "",
     "name": "",
     "radio": false,
-    "group": [""]
+    "group": ""
   }
 }
 ```
