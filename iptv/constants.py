@@ -53,6 +53,7 @@ JSON_SCHEMA = {
                     'attributes': {
                         'type': 'object',
                         'description': '(Object) Optional: additional Stream informations',
+                        'default': {},
                         'properties': {
                             'geolocked': {
                                 'type': 'boolean',
@@ -86,32 +87,36 @@ JSON_SCHEMA = {
         },
         'm3u': {
             'type': 'object',
-            'description': '(Object) Optional: Metadata for m3u files, mostly used for LiveProxy.',
+            'description': '(Object) Optional: Metadata for m3u files.',
             'properties': {
                 'logo': {
                     'type': 'string',
-                    'description': '(String) Optional: tvg-logo'
+                    'description': '(String) Optional: channel logo URL; eg. http://foo.bar/logo.png'
                 },
                 'id': {
                     'type': 'string',
-                    'description': '(String) Optional: tvg-id'
+                    'description': '(String) Optional: TV guide channel ID'
                 },
                 'shift': {
                     'type': 'string',
-                    'description': '(String) Optional: tvg-shift'
+                    'description': '(String) Optional: TV guide time shifting'
                 },
                 'name': {
                     'type': 'string',
-                    'description': '(String) Optional: tvg-name'
+                    'description': '(String) Optional: TV guide channel name'
                 },
                 'radio': {
                     'type': 'boolean',
                     'default': False,
-                    'description': '(Boolean) Optional: radio; Default=false'
+                    'description': '(Boolean) Optional: Audio only; Default=false'
                 },
                 'group': {
                     'type': 'string',
                     'description': '(String) Optional: Group Titles separated by a semicolon; eg. News;Sports'
+                },
+                'chno': {
+                    'type': 'string',
+                    'description': '(String) Optional: Channel number; eg. 35'
                 }
             }
         }
