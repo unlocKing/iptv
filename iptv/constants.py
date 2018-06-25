@@ -110,12 +110,8 @@ JSON_SCHEMA = {
                     'description': '(Boolean) Optional: radio; Default=false'
                 },
                 'group': {
-                    'type': 'array',
-                    'description': '(Array) Optional: group-title',
-                    'items': {
-                        'type': 'string',
-                        'description': '(String) Optional: group-title',
-                    }
+                    'type': 'string',
+                    'description': '(String) Optional: Group Titles separated by a semicolon; eg. News;Sports'
                 }
             }
         }
