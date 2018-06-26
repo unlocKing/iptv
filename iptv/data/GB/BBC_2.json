@@ -1,0 +1,26 @@
+{
+  "name": "BBC 2",
+  "region": "GB",
+  "language": "eng",
+  "streams": [
+    {
+      "url": "https://www.bbc.co.uk/iplayer/live/bbctwo",
+      "usage": "streamlink",
+      "attributes": {
+        "geolocked": true,
+        "authentication": true,
+        "subscription": false,
+        "drm": false,
+        "hd": true
+      }
+    }
+  ],
+  "m3u": {
+    "logo": "https://raw.githubusercontent.com/python-iptv/squaredTV/master/squaredTV_generic/BBC-Two.png",
+    "id": "",
+    "shift": "",
+    "name": "",
+    "radio": false,
+    "group": ""
+  }
+}
