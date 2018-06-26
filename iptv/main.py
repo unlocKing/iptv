@@ -10,9 +10,8 @@ from pathlib import Path
 from iptv.constants import JSON_SCHEMA
 
 FORMAT = '[%(name)s][%(levelname)s] %(message)s'
-logging.basicConfig(format=FORMAT)
+logging.basicConfig(stream=sys.stdout, format=FORMAT, level=logging.DEBUG)
 log = logging.getLogger(__name__)
-log.setLevel(logging.DEBUG)
 
 
 
