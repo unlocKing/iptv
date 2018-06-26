@@ -123,6 +123,11 @@ JSON_SCHEMA = {
     }
 }
 
+HOST = '127.0.0.1'
+PORT = '53422'
+
 __all__ = [
+    'HOST',
     'JSON_SCHEMA',
+    'PORT',
 ]
