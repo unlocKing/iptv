@@ -6,28 +6,26 @@ import os
 
 from setuptools import setup
 
-import iptv
-
 here = os.path.abspath(os.path.dirname(__file__))
 
 with io.open(os.path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = '\n' + f.read()
 
 setup(
-    name=iptv.__title__,
-    version=iptv.__version__,
-    description=iptv.__summary__,
+    name='iptv',
+    version='0.0.0',
+    description='IPTV database with a M3U playlist generator for LiveProxy.',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    license=iptv.__license__,
-    url=iptv.__uri__,
+    license='MIT',
+    url='https://github.com/back-to/iptv',
     project_urls={
         'Documentation': 'https://back-to.github.io/',
         'Source': 'https://github.com/back-to/iptv/',
         'Tracker': 'https://github.com/back-to/iptv/issues',
     },
-    author=iptv.__author__,
-    author_email=iptv.__email__,
+    author='back-to',
+    author_email='backto@protonmail.ch',
     packages=['iptv'],
     entry_points={
         'console_scripts': [
