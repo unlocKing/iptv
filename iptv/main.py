@@ -98,8 +98,7 @@ def main():
                 data += [validate(json.load(f))]
             except JsonSchemaException as e:
                 log.error('{0}: {1}'.format(
-                    os.path.join(json_file.parts[-2],
-                                 json_file.parts[-1]),
+                    os.path.split(json_file)[-1],
                     str(e),
                 ))
     log.info('Found {0} channels'.format(len(data)))
