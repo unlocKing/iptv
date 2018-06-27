@@ -156,6 +156,14 @@ def setup_args():
     return args
 
 
+def write_data(filename, data):
+    log.info('Write data to {0}'.format(filename))
+    with open(filename, 'w') as f:
+        f.write(data)
+    f.close()
+    log.info('--- END ---')
+
+
 def main():
     args = setup_args()
     log_current_versions()
@@ -164,7 +172,7 @@ def main():
         '''create M3U file'''
         log.debug('Found M3U command.')
         data = m3u_load_data(args)
-        return data
+        write_data(args.output, data)
     elif args.which == 'json':
         '''create JSON file'''
         log.debug('Found JSON command.')
