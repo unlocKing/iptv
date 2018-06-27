@@ -54,11 +54,6 @@ class PlaylistM3U(object):
             log.debug('Removed M3U metadata.')
             data_m3u = {}
 
-        # XXX
-        # args.remove_group
-        # args.group_country
-        # args.group_language
-        # args.limit_group
         m3u_group_title = data_m3u.get('group')
         m3u_radio = data_m3u.get('radio')
         m3u_tvg_id = data_m3u.get('id')

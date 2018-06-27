@@ -17,7 +17,7 @@ from iptv import __version__ as iptv_version
 from iptv.argparser import build_parser
 from iptv.constants import JSON_SCHEMA
 from iptv.m3u import PlaylistM3U
-from iptv.utils import comma_list
+from iptv.utils import comma_list, comma_list_filter_remove
 
 FORMAT = '[%(name)s][%(levelname)s] %(message)s'
 logging.basicConfig(stream=sys.stdout, format=FORMAT, level=logging.DEBUG)
@@ -102,6 +102,7 @@ def m3u_load_data(args):
 
     lines = '#EXTM3U\n'
     for _x in data:
+        _group = _x.get('m3u', {}).get('group')
         if (args.remove_country and _x.get('country')
                 and (_x['country'].lower() in [e.lower() for e in args.remove_country])):
             log.debug('Removed country {0}: {1}'.format(_x['country'], _x['name']))
@@ -122,6 +123,27 @@ def m3u_load_data(args):
                 and (_x['language'].lower() not in [e.lower() for e in args.source_language])):
             log.debug('Removed source language {0}: {1}'.format(_x['language'], _x['name']))
             continue
+
+        if (args.group_language and _x.get('language')):
+            _group = ';'.join(filter(None, [_x['language'].upper(), _group]))
+        if (args.group_country and _x.get('country')):
+            _group = ';'.join(filter(None, [_x['country'].upper(), _group]))
+
+        if (args.remove_group and _group):
+            _le = len(_group)
+            _f = comma_list_filter_remove(args.remove_group, ';')
+            _group = ';'.join(filter(None, _f(_group)))
+            if len(_group) != _le:
+                log.debug('Removed group: {0}'.format(_x['name']))
+                continue
+
+        if (args.limit_group and _group):
+            if isinstance(_group, str):
+                _group = comma_list(_group, ';')
+            if isinstance(_group, list) and len(_group) > 0:
+                _group = _group[0]
+
+        _x.update({'m3u': {'group': _group}})
         lines += m3u._generate(_x, args)
     return lines
 
