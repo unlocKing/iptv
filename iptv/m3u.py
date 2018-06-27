@@ -18,25 +18,51 @@ class PlaylistM3U(object):
                 item['url'])
 
     def m3u_item(self, item, value):
-        if not value:
+        if not (item and value):
             return ''
         return ' {0}="{1}"'.format(item, value)
 
-    def _generate(self, data, options={}):
+    def m3u_name_netloc(self, url):
+        '''
+        removes subdomains from an URL
+
+        :param url: URL
+        '''
+        _url_netloc = urlparse(url).netloc.split('.')
+        url_netloc = '{0}.{1}'.format(_url_netloc[-2],
+                                      _url_netloc[-1])
+        if (len(url_netloc) <= 6
+                and len(_url_netloc) >= 3
+                and _url_netloc[-3] != 'www'):
+            url_netloc = '{0}.{1}'.format(_url_netloc[-3],
+                                          url_netloc)
+        return url_netloc
+
+    def _generate(self, data, args):
         data_m3u = data.get('m3u')
 
-        # XXX m3u-without-metadata
-        # if options.get('m3u-without-metadata'):
-        #    data_m3u = {}
-        # XXX  country group
+        if args.clean_metadata:
+            log.debug('Removed M3U metadata.')
+            data_m3u = {}
+
+        # XXX
+        # args.remove_group
+        # args.group_country
+        # args.group_language
+        # args.limit_group
         m3u_group_title = data_m3u.get('group')
         m3u_radio = data_m3u.get('radio')
         m3u_tvg_id = data_m3u.get('id')
         # XXX option logo_path without http
+        # args.logopath
         m3u_tvg_logo = data_m3u.get('logo')
         m3u_tvg_name = data_m3u.get('name')
         m3u_tvg_shift = data_m3u.get('shift')
         m3u_tvg_chno = data_m3u.get('chno')
+
+        if m3u_radio and args.remove_radio:
+            log.debug('Skip Radio: {0}'.format(data['name']))
+            return ''
 
         line = '#EXTINF:-1{tvg_id}{tvg_name}{tvg_chno}{tvg_shift}{group_title}{radio},{name}'.format(
             group_title=self.m3u_item('group-title', m3u_group_title),
@@ -52,8 +78,13 @@ class PlaylistM3U(object):
         lines = ''
         streams = sorted(data['streams'],
                          key=lambda x: self.sort_streams(x))
-        # XXX mirror limit option
+
+        mirror = 0
         for stream in streams:
+            if args.limit_mirror <= mirror:
+                log.debug('Skip mirror {0}: {1}'.format(mirror, data['name']))
+                return ''
+            mirror += 1
             stream_attributes = stream.get('attributes')
             stream_direct_data = stream.get('direct_data')
             stream_streamlink_data = stream.get('streamlink_data')
@@ -72,17 +103,14 @@ class PlaylistM3U(object):
                          'a authentication or a subscription. {0}'.format(data['name']))
 
             stream_line = line
-            # XXX option m3u no hd after name
-            if (not options.get('m3u-no-hd') and stream_attributes.get('hd')):
+            if (not args.name_no_hd and stream_attributes.get('hd')):
                 stream_line += ' HD'
-            # XXX option show netloc after channel name
-            if (options.get('m3u-netloc')):
-                url_netloc = urlparse(stream['url']).netloc.split('.')
-                url_netloc = '{0}.{1}'.format(url_netloc[-2],
-                                              url_netloc[-1])
+            if args.name_netloc:
+                url_netloc = self.m3u_name_netloc(stream['url'])
                 stream_line += ' | {0}'.format(url_netloc)
             stream_line += '\n'
 
+            # XXX args.direct_to_streamlink
             if stream['usage'] == 'direct':
                 stream_line += stream['url']
                 if stream_direct_data:

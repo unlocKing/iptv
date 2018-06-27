@@ -12,7 +12,9 @@ from fastjsonschema import (
     VERSION as fastjsonschema_version,
 )
 from glob import glob
+
 from iptv import __version__ as iptv_version
+from iptv.argparser import build_parser
 from iptv.constants import JSON_SCHEMA
 from iptv.m3u import PlaylistM3U
 from iptv.utils import comma_list
@@ -76,21 +78,13 @@ def log_current_versions():
     log.debug('Fastjsonschema({0})'.format(fastjsonschema_version))
 
 
-def main():
-    log_current_versions()
-
-    # XXX add args
-    options = {
-        'm3u-netloc': True,
-    }
-
+def m3u_load_data(args):
+    log.info('Load JSON data')
     validate = compile(JSON_SCHEMA)
 
-    log.info('Load JSON data')
     data = []
-
-    public = private = None
-    json_files = get_json_files(public=public, private=private)
+    json_files = get_json_files(public=args.source_dirs_public,
+                                private=args.source_dirs_private)
 
     for json_file in json_files:
         with open(json_file) as f:
@@ -108,4 +102,51 @@ def main():
 
     lines = '#EXTM3U\n'
     for _x in data:
-        lines += m3u._generate(_x, options=options)
+        if (args.remove_country and _x.get('country')
+                and (_x['country'].lower() in [e.lower() for e in args.remove_country])):
+            log.debug('Removed country {0}: {1}'.format(_x['country'], _x['name']))
+            continue
+        if (args.remove_language and _x.get('language')
+                and (_x['language'].lower() in [e.lower() for e in args.remove_language])):
+            log.debug('Removed language {0}: {1}'.format(_x['language'], _x['name']))
+            continue
+        if (args.remove_name and _x['name']
+                and (_x['name'].lower() in [e.lower() for e in args.remove_name])):
+            log.debug('Removed name: {0}'.format(_x['name']))
+            continue
+        if (args.source_country and _x.get('country')
+                and (_x['country'].lower() not in [e.lower() for e in args.source_country])):
+            log.debug('Removed source country {0}: {1}'.format(_x['country'], _x['name']))
+            continue
+        if (args.source_language and _x.get('language')
+                and (_x['language'].lower() not in [e.lower() for e in args.source_language])):
+            log.debug('Removed source language {0}: {1}'.format(_x['language'], _x['name']))
+            continue
+        lines += m3u._generate(_x, args)
+    return lines
+
+
+def setup_args():
+    log.debug('Set up args')
+    parser = build_parser()
+    arglist = sys.argv[1:]
+    args, unknown = parser.parse_known_args(arglist)
+    return args
+
+
+def main():
+    args = setup_args()
+    log_current_versions()
+
+    if args.which == 'm3u':
+        '''create M3U file'''
+        log.debug('Found M3U command.')
+        data = m3u_load_data(args)
+        return data
+    elif args.which == 'json':
+        '''create JSON file'''
+        log.debug('Found JSON command.')
+        return
+    else:
+        log.error('invalid command name')
+        return
