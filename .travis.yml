@@ -4,7 +4,7 @@ matrix:
   include:
   - python: '3.5'
   - python: '3.6'
-  #  env: UPLOAD_M3U=yes
+    env: UPLOAD_M3U=yes
   - python: '3.7-dev'
   allow_failures:
   - python: '3.7-dev'
@@ -22,6 +22,19 @@ install:
 
 script:
   - pytest --cov
+  - iptv m3u --output playlist/de.m3u --group-country --limit-mirror 2 --name-netloc --source-language 'deu'
+  - iptv m3u --output playlist/fr.m3u --group-country --limit-mirror 2 --name-netloc --source-language 'fra'
+  - iptv m3u --output playlist/gb.m3u --group-country --limit-mirror 2 --name-netloc --source-language 'eng'
+  - iptv m3u --output playlist/ru.m3u --group-country --limit-mirror 2 --name-netloc --source-language 'rus'
+  - iptv m3u --output playlist/tr.m3u --group-country --limit-mirror 2 --name-netloc --source-language 'tur'
+  - iptv m3u --output playlist/vn.m3u --group-country --limit-mirror 2 --name-netloc --source-language 'vie'
+  # --only-direct
+  - iptv m3u --output playlist/de_direct.m3u --group-country --limit-mirror 2 --name-netloc --source-language 'deu' --only-direct
+  - iptv m3u --output playlist/fr_direct.m3u --group-country --limit-mirror 2 --name-netloc --source-language 'fra' --only-direct
+  - iptv m3u --output playlist/gb_direct.m3u --group-country --limit-mirror 2 --name-netloc --source-language 'eng' --only-direct
+  - iptv m3u --output playlist/ru_direct.m3u --group-country --limit-mirror 2 --name-netloc --source-language 'rus' --only-direct
+  - iptv m3u --output playlist/tr_direct.m3u --group-country --limit-mirror 2 --name-netloc --source-language 'tur' --only-direct
+  - iptv m3u --output playlist/vn_direct.m3u --group-country --limit-mirror 2 --name-netloc --source-language 'vie' --only-direct
 
 after_success:
   - set -e

@@ -10,6 +10,7 @@ Github source files
 
 Website m3u link
 - https://liveproxy.github.io/iptv/fr.m3u
+- https://liveproxy.github.io/iptv/fr_direct.m3u
 
 ## Germany
 
@@ -18,6 +19,7 @@ Github source files
 
 Website m3u link
 - https://liveproxy.github.io/iptv/de.m3u
+- https://liveproxy.github.io/iptv/de_direct.m3u
 
 ## Russian Federation
 
@@ -26,6 +28,7 @@ Github source files
 
 Website m3u link
 - https://liveproxy.github.io/iptv/ru.m3u
+- https://liveproxy.github.io/iptv/ru_direct.m3u
 
 ## Turkey
 
@@ -34,6 +37,7 @@ Github source files
 
 Website m3u link
 - https://liveproxy.github.io/iptv/tr.m3u
+- https://liveproxy.github.io/iptv/tr_direct.m3u
 
 ## United Kingdom of Great Britain and Northern Ireland
 
@@ -42,6 +46,7 @@ Github source files
 
 Website m3u link
 - https://liveproxy.github.io/iptv/gb.m3u
+- https://liveproxy.github.io/iptv/gb_direct.m3u
 
 ## Viet Nam
 
@@ -50,3 +55,4 @@ Github source files
 
 Website m3u link
 - https://liveproxy.github.io/iptv/vn.m3u
+- https://liveproxy.github.io/iptv/vn_direct.m3u
