@@ -9,7 +9,14 @@ def comma_list(values):
     converts a comma-separated list into a valid list for python
     :param values: (string) comma-separated list
     '''
-    return [val.strip() for val in values.split(',')]
+    if isinstance(values, list):
+        return values
+    elif isinstance(values, str):
+        return [val.strip() for val in values.split(',')]
+    else:
+        raise TypeError(
+            'values type is "{0}"", only "list" or "str" is allowed.'.format(
+                type(values).__name__))
 
 
 def comma_list_filter(acceptable):

@@ -21,11 +21,24 @@ class TestUtils(unittest.TestCase):
                 'data': 'Das Erste,Россия 24',
                 'result': ['Das Erste', 'Россия 24']
             },
+            {
+                'data': ['Das Erste', 'Россия 24', 'X'],
+                'result': ['Das Erste', 'Россия 24', 'X']
+            },
         ]
 
         for data in test_data:
             self.assertEqual(
                 comma_list(data['data']), data['result'])
+
+        test_data = [
+            {},
+            123,
+        ]
+
+        for data in test_data:
+            with self.assertRaises(TypeError):
+                comma_list(data)
 
     def test_comma_list_filter(self):
         test_data = [
