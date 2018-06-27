@@ -25,11 +25,17 @@ class TestUtils(unittest.TestCase):
                 'data': ['Das Erste', 'Россия 24', 'X'],
                 'result': ['Das Erste', 'Россия 24', 'X']
             },
+            {
+                'split_at': ';',
+                'data': 'Das Erste;Россия 24',
+                'result': ['Das Erste', 'Россия 24']
+            },
         ]
 
         for data in test_data:
             self.assertEqual(
-                comma_list(data['data']), data['result'])
+                comma_list(data['data'], data.get('split_at')),
+                data['result'])
 
         test_data = [
             {},
@@ -57,10 +63,16 @@ class TestUtils(unittest.TestCase):
                 'data': 'DE,FR,RU,US',
                 'result': ['RU']
             },
+            {
+                'split_at': ';',
+                'acceptable': ['bar', 'com', 'RU'],
+                'data': 'DE;FR;RU;US',
+                'result': ['RU']
+            },
         ]
 
         for data in test_data:
-            func = comma_list_filter(data['acceptable'])
+            func = comma_list_filter(data['acceptable'], data.get('split_at'))
             self.assertEqual(func(data['data']), data['result'])
 
     def test_comma_list_filter_remove(self):
@@ -90,8 +102,15 @@ class TestUtils(unittest.TestCase):
                 'data': 'Das Erste,Россия 24,News',
                 'result': ['Das Erste', 'Россия 24']
             },
+            {
+                'split_at': ';',
+                'not_acceptable': ['bar', 'News', 'foo'],
+                'data': 'Das Erste;Россия 24;News',
+                'result': ['Das Erste', 'Россия 24']
+            },
         ]
 
         for data in test_data:
-            func = comma_list_filter_remove(data['not_acceptable'])
+            func = comma_list_filter_remove(data['not_acceptable'],
+                                            data.get('split_at'))
             self.assertEqual(func(data['data']), data['result'])
