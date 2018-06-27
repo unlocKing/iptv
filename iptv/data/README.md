@@ -18,6 +18,7 @@ Country name is defined in ISO 3166-1 alpha-2
       "streamlink_data": {},    /* (Object) Optional: additional streamlink URL options; eg. {"http-header": "User-Agent=Mozilla"} */
       "direct_data": {},        /* (Object) Optional: additional direct URL options; eg. {"User-Agent": "Mozilla"} */
       "attributes": {
+        "datetime": "",         /* (String)  Optional: An ISO 8601 Timestamp of the last update; eg. 1970-01-01T00:00:00.000-00:00 */
         "geolocked": "",        /* (Boolean) Optional: If the stream is geolocked or not; Default=false */
         "authentication": "",   /* (Boolean) Optional: If the streams require authentication; Default=false */
         "subscription": "",     /* (Boolean) Optional: If the stream requires a subscription; Default=false */
@@ -52,6 +53,7 @@ Country name is defined in ISO 3166-1 alpha-2
       "streamlink_data": {},
       "direct_data": {},
       "attributes": {
+        "datetime": "",
         "geolocked": false true,
         "authentication": false true,
         "subscription": false true,

@@ -55,6 +55,12 @@ JSON_SCHEMA = {
                         'description': '(Object) Optional: additional Stream informations',
                         'default': {},
                         'properties': {
+                            'datetime': {
+                                'type': 'string',
+                                'format': 'date-time',
+                                'default': '1970-01-01T00:00:00.000-00:00',
+                                'description': '(String) Optional: An ISO 8601 Timestamp of the last update; eg. 1970-01-01T00:00:00.000-00:00'
+                            },
                             'geolocked': {
                                 'type': 'boolean',
                                 'default': False,
