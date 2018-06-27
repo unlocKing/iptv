@@ -1,6 +1,6 @@
 {
   "name": "BBC 2",
-  "region": "GB",
+  "country": "GB",
   "language": "eng",
   "streams": [
     {

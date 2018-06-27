@@ -1,6 +1,6 @@
 {
   "name": "Euronews",
-  "region": "RU",
+  "country": "RU",
   "language": "rus",
   "streams": [
     {

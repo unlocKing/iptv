@@ -9,7 +9,7 @@ Country name is defined in ISO 3166-1 alpha-2
 ```js
 {
   "name": "",                   /* (String) Required: A TV Channel Name; eg. TV1 */
-  "region": "",                 /* (String) Optional: An ISO 3166-1 alpha-2 country code; eg. BE' */
+  "country": "",                /* (String) Optional: An ISO 3166-1 alpha-2 country code; eg. BE' */
   "language": "",               /* (String) Optional: An ISO 639-3 language code; eg. eng */
   "streams": [
     {
@@ -44,7 +44,7 @@ Country name is defined in ISO 3166-1 alpha-2
 ```js
 {
   "name": "",
-  "region": "",
+  "country": "",
   "language": "",
   "streams": [
     {
@@ -79,7 +79,7 @@ Country name is defined in ISO 3166-1 alpha-2
 ```js
 {
   "name": "",
-  "region": "",
+  "country": "",
   "language": "",
   "streams": [
     {

@@ -11,7 +11,7 @@ JSON_SCHEMA = {
              'type': 'string',
              'description': '(String) Required: A TV Channel Name; eg. TV1'
         },
-        'region': {
+        'country': {
             'type': 'string',
             'description': '(String) Optional: An ISO 3166-1 alpha-2 country code; eg. BE',
             'minLength': 2,

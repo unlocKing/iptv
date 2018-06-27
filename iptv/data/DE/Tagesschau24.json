@@ -1,6 +1,6 @@
 {
   "name": "Tagesschau24",
-  "region": "DE",
+  "country": "DE",
   "language": "deu",
   "streams": [
     {

@@ -1,6 +1,6 @@
 {
   "name": "SkyNews",
-  "region": "GB",
+  "country": "GB",
   "language": "eng",
   "streams": [
     {

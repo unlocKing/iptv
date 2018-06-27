@@ -15,7 +15,7 @@ class TestConstants(unittest.TestCase):
             '''
             {
               "name": "TV Channel",
-              "region": "DE",
+              "country": "DE",
               "language": "deu",
               "streams": [
                 {
@@ -45,7 +45,7 @@ class TestConstants(unittest.TestCase):
             '''
             {
               "name": "TV Channel 2",
-              "region": "DE",
+              "country": "DE",
               "language": "deu",
               "streams": [
                 {
@@ -77,7 +77,7 @@ class TestConstants(unittest.TestCase):
             '''
             {
               "name": "TV Channel 3",
-              "region": "DE",
+              "country": "DE",
               "language": "deu",
               "streams": [
                 {
@@ -97,7 +97,7 @@ class TestConstants(unittest.TestCase):
             # Required "name"
             '''
             {
-              "region": "DE",
+              "country": "DE",
               "language": "deu",
               "streams": [
                 {
@@ -107,11 +107,11 @@ class TestConstants(unittest.TestCase):
               ]
             }
             ''',
-            # invalid length "region"
+            # invalid length "country"
             '''
             {
               "name": "TV Channel regio",
-              "region": "DE-DE",
+              "country": "DE-DE",
               "language": "deu",
               "streams": [
                 {
@@ -125,7 +125,7 @@ class TestConstants(unittest.TestCase):
             '''
             {
               "name": "TV Channel language",
-              "region": "DE",
+              "country": "DE",
               "language": "deutsch",
               "streams": [
                 {
@@ -139,7 +139,7 @@ class TestConstants(unittest.TestCase):
             '''
             {
               "name": "TV Channel url",
-              "region": "DE",
+              "country": "DE",
               "language": "deu",
               "streams": [
                 {
@@ -152,7 +152,7 @@ class TestConstants(unittest.TestCase):
             '''
             {
               "name": "TV Channel usage",
-              "region": "DE",
+              "country": "DE",
               "language": "deu",
               "streams": [
                 {
@@ -165,7 +165,7 @@ class TestConstants(unittest.TestCase):
             '''
             {
               "name": "TV Channel streams",
-              "region": "DE",
+              "country": "DE",
               "language": "deu"
             }
             ''',
