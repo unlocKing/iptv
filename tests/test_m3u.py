@@ -24,6 +24,20 @@ class TestPlaylistM3U(unittest.TestCase):
         for item, value, result in test_data:
             self.assertEqual(self.m3u.m3u_item(item, value), result)
 
+    def test_m3u_logopath(self):
+        test_data = [
+            ('img.png', 'https://www.zdf.de/', 'https://www.zdf.de/img.png'),
+            ('/12.png', 'https://www.foo.bar/live/', 'https://www.foo.bar/12.png'),
+            ('https://live/live.png', 'https://www/player/', 'https://live/live.png'),
+            ('https://foo', '', 'https://foo'),
+            ('img.png', '', None),
+            ('', 'https://foo', None),
+            ('img.png', 'XXXXXXXXXX', None),
+        ]
+
+        for logo, logopath, result in test_data:
+            self.assertEqual(self.m3u.m3u_logopath(logo, logopath), result)
+
     def test_m3u_name_netloc(self):
         test_data = [
             ('https://www.zdf.de/', 'zdf.de'),

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import logging
 
-from urllib.parse import urlencode, urlparse
+from urllib.parse import urljoin, urlencode, urlparse
 
 log = logging.getLogger(__name__)
 
@@ -21,6 +21,15 @@ class PlaylistM3U(object):
         if not (item and value):
             return ''
         return ' {0}="{1}"'.format(item, value)
+
+    def m3u_logopath(self, logo, logopath):
+        if not logo:
+            return
+        elif logopath and not logo.startswith(('http://', 'https://')):
+            logo = urljoin(logopath, logo)
+
+        if logo.startswith(('http://', 'https://')):
+            return logo
 
     def m3u_name_netloc(self, url):
         '''
@@ -53,9 +62,7 @@ class PlaylistM3U(object):
         m3u_group_title = data_m3u.get('group')
         m3u_radio = data_m3u.get('radio')
         m3u_tvg_id = data_m3u.get('id')
-        # XXX option logo_path without http
-        # args.logopath
-        m3u_tvg_logo = data_m3u.get('logo')
+        m3u_tvg_logo = self.m3u_logopath(data_m3u.get('logo'), args.logopath)
         m3u_tvg_name = data_m3u.get('name')
         m3u_tvg_shift = data_m3u.get('shift')
         m3u_tvg_chno = data_m3u.get('chno')
@@ -64,7 +71,7 @@ class PlaylistM3U(object):
             log.debug('Skip Radio: {0}'.format(data['name']))
             return ''
 
-        line = '#EXTINF:-1{tvg_id}{tvg_name}{tvg_chno}{tvg_shift}{group_title}{radio},{name}'.format(
+        line = '#EXTINF:-1{tvg_id}{tvg_name}{tvg_chno}{tvg_shift}{group_title}{radio}{tvg_logo},{name}'.format(
             group_title=self.m3u_item('group-title', m3u_group_title),
             name=data['name'],
             radio=self.m3u_item('radio', 'true') if m3u_radio else '',
