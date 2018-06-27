@@ -227,6 +227,13 @@ def build_parser():
         Opposite of --source-language
         '''
     )
+    remove.add_argument(
+        '--only-direct',
+        action='store_true',
+        help='''
+        Removes all Channels without a direct stream URL.
+        '''
+    )
 
     source = m3u_options.add_argument_group("Data source options")
     source.add_argument(

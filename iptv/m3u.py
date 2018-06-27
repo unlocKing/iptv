@@ -83,6 +83,9 @@ class PlaylistM3U(object):
 
         mirror = 0
         for stream in streams:
+            if args.only_direct and not stream['usage'] == 'direct':
+                log.debug('Skip {0}: {1}'.format(stream['usage'], data['name']))
+                continue
             if args.limit_mirror <= mirror:
                 log.debug('Skip mirror {0}: {1}'.format(mirror, data['name']))
                 return ''
