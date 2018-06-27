@@ -2,7 +2,6 @@
 import logging
 
 from urllib.parse import urlencode, urlparse
-from iptv.constants import HOST, PORT
 
 log = logging.getLogger(__name__)
 
@@ -99,8 +98,8 @@ class PlaylistM3U(object):
                 stream_streamlink_data.update({'url': stream['url']})
 
                 stream_line += 'http://{host}:{port}/{usage}/?{data}'.format(
-                    host=HOST,
-                    port=PORT,
+                    host=args.host,
+                    port=args.port,
                     usage=stream['usage'],
                     data=urlencode(stream_streamlink_data),
                 )

@@ -4,6 +4,7 @@ import argparse
 from textwrap import dedent
 
 from iptv import __version__
+from iptv.constants import HOST, PORT
 from iptv.utils import comma_list
 
 
@@ -121,17 +122,23 @@ def build_parser():
         '--host',
         type=str,
         metavar='HOST',
+        default=HOST,
         help='''
         IP for LiveProxy
-        '''
+
+        Default: {0}
+        '''.format(HOST)
     )
     m3u.add_argument(
         '--port',
         type=str,
         metavar='PORT',
+        default=PORT,
         help='''
         PORT for LiveProxy
-        '''
+
+        Default: {0}
+        '''.format(PORT)
     )
     m3u.add_argument(
         '--direct-to-streamlink',
