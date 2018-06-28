@@ -15,7 +15,11 @@ log = logging.getLogger(__name__)
 
 
 def create_json_data(args):
-    iso_time = datetime.utcnow().replace(tzinfo=timezone.utc).isoformat()
+    iso_time = datetime.utcnow().replace(minute=0,
+                                         second=0,
+                                         microsecond=0,
+                                         tzinfo=timezone.utc
+                                         ).isoformat(timespec='microseconds')
     data = {
         'country': args.country.upper(),
         'language': args.language.lower(),
