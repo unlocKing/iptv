@@ -16,7 +16,9 @@ from glob import glob
 from iptv import __version__ as iptv_version
 from iptv.argparser import build_parser
 from iptv.constants import JSON_SCHEMA
+from iptv.jsondata import create_json_data
 from iptv.m3u import PlaylistM3U
+from iptv.output import write_data
 from iptv.utils import comma_list, comma_list_filter_remove
 
 FORMAT = '[%(name)s][%(levelname)s] %(message)s'
@@ -156,14 +158,6 @@ def setup_args():
     return args
 
 
-def write_data(filename, data):
-    log.info('Write data to {0}'.format(filename))
-    with open(filename, 'w') as f:
-        f.write(data)
-    f.close()
-    log.info('--- END ---')
-
-
 def main():
     args = setup_args()
     log_current_versions()
@@ -176,7 +170,7 @@ def main():
     elif args.which == 'json':
         '''create JSON file'''
         log.debug('Found JSON command.')
-        return
+        return create_json_data(args)
     else:
         log.error('invalid command name')
         return

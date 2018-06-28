@@ -279,9 +279,6 @@ def build_parser():
     # --- START JSON --- #
     _json = subparsers.add_parser(
         'json',
-        usage='''
-        iptv json [OPTIONS]
-        ''',
         help='''
         create a JSON data file
         '''
@@ -292,10 +289,164 @@ def build_parser():
     )
     _options.add_argument(
         '--output',
-        metavar='FILENAME',
-        required=True,
+        metavar='FOLDER',
+        default=False,
         help='''
-        Write the JSON data to a FILENAME
+        Folder where the generated JSON file will be stored.
+
+        Default: public folder in "iptv/data/"
+        '''
+    )
+    _options.add_argument(
+        '--country',
+        type=str,
+        required=True,
+        metavar='ISO-CODE',
+        help='''
+        (String) Optional: An ISO 3166-1 alpha-2 country code; eg. BE'
+        '''
+    )
+    _options.add_argument(
+        '--language',
+        type=str,
+        required=True,
+        metavar='ISO-CODE',
+        help='''
+        (String) Optional: An ISO 639-3 language code; eg. eng
+        '''
+    )
+    _options.add_argument(
+        '--name',
+        type=str,
+        required=True,
+        default='',
+        metavar='NAME',
+        help='''
+        (String) Required: A TV Channel Name; eg. TV1
+        '''
+    )
+
+    _json_m3u = _json.add_argument_group('M3U meta data')
+    _json_m3u.add_argument(
+        '--chno',
+        type=str,
+        metavar='CHNO',
+        default='',
+        help='''
+        (String) Optional: Channel number; eg. 35
+        '''
+    )
+    _json_m3u.add_argument(
+        '--group',
+        type=str,
+        metavar='GROUP',
+        default='',
+        help='''
+        (String) Optional: Group Titles separated by a semicolon; eg. News;Sports
+        '''
+    )
+    _json_m3u.add_argument(
+        '--id',
+        type=str,
+        metavar='ID',
+        default='',
+        help='''
+        (String) Optional: TV guide channel ID
+        '''
+    )
+    _json_m3u.add_argument(
+        '--logo',
+        type=str,
+        metavar='LOGO',
+        default='',
+        help='''
+        (String) Optional: channel logo URL; eg. http://foo.bar/logo.png
+        '''
+    )
+    _json_m3u.add_argument(
+        '--name-epg',
+        type=str,
+        metavar='NAME',
+        default='',
+        help='''
+        (String) Optional: TV guide channel name
+        '''
+    )
+    _json_m3u.add_argument(
+        '--radio',
+        action='store_true',
+        default=False,
+        help='''
+        (Boolean) Optional: Audio only; Default=false
+        '''
+    )
+    _json_m3u.add_argument(
+        '--shift',
+        type=str,
+        metavar='SHIFT',
+        default='',
+        help='''
+        (String) Optional: TV guide time shifting
+        '''
+    )
+
+    _json_stream = _json.add_argument_group('Stream data')
+    _json_stream.add_argument(
+        '--authentication',
+        action='store_true',
+        default=False,
+        help='''
+        (Boolean) Optional: If the streams require authentication; Default=false
+        '''
+    )
+    _json_stream.add_argument(
+        '--drm',
+        action='store_true',
+        default=False,
+        help='''
+        (Boolean) Optional: If the stream is protected by DRM; Default=false
+        '''
+    )
+    _json_stream.add_argument(
+        '--geolocked',
+        action='store_true',
+        default=False,
+        help='''
+        (Boolean) Optional: If the stream is geolocked or not; Default=false
+        '''
+    )
+    _json_stream.add_argument(
+        '--hd',
+        action='store_true',
+        default=False,
+        help='''
+        (Boolean) Optional: If the stream is available in High Definition; Default=false
+        '''
+    )
+    _json_stream.add_argument(
+        '--subscription',
+        action='store_true',
+        default=False,
+        help='''
+        (Boolean) Optional: If the stream requires a subscription; Default=false
+        '''
+    )
+    _json_stream.add_argument(
+        '--url',
+        type=str,
+        required=True,
+        metavar='URL',
+        help='''
+        (String) Required: The URL for the stream, eg. https://www.daserste.de/live/index.html
+        '''
+    )
+    _json_stream.add_argument(
+        '--usage',
+        type=str,
+        required=True,
+        metavar='USAGE',
+        help='''
+        (String) Required: The usage of the URL; eg. direct, streamlink, streamlink_301 or web
         '''
     )
     # --- END JSON --- #
