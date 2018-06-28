@@ -1,0 +1,30 @@
+{
+    "country": "US",
+    "language": "eng",
+    "m3u": {
+        "chno": "",
+        "group": "News",
+        "id": "",
+        "logo": "https://raw.githubusercontent.com/python-iptv/TheLogoDB/master/Images/MSNBC.png",
+        "name": "",
+        "radio": false,
+        "shift": ""
+    },
+    "name": "MSNBC",
+    "streams": [
+        {
+            "attributes": {
+                "authentication": false,
+                "datetime": "2018-06-28T22:00:00.000000+00:00",
+                "drm": false,
+                "geolocked": false,
+                "hd": true,
+                "subscription": false
+            },
+            "direct_data": {},
+            "streamlink_data": {},
+            "url": "http://tvemsnbc-lh.akamaihd.net/i/nbcmsnbc_1@122532/index_4296_av-b.m3u8",
+            "usage": "direct"
+        }
+    ]
+}

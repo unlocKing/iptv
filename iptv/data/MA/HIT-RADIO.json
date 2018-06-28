@@ -1,0 +1,30 @@
+{
+    "country": "MA",
+    "language": "ary",
+    "m3u": {
+        "chno": "",
+        "group": "Music",
+        "id": "",
+        "logo": "",
+        "name": "",
+        "radio": false,
+        "shift": ""
+    },
+    "name": "HIT-RADIO",
+    "streams": [
+        {
+            "attributes": {
+                "authentication": false,
+                "datetime": "2018-06-28T21:00:00.000000+00:00",
+                "drm": false,
+                "geolocked": false,
+                "hd": true,
+                "subscription": false
+            },
+            "direct_data": {},
+            "streamlink_data": {},
+            "url": "https://www.dailymotion.com/hit-radio",
+            "usage": "streamlink"
+        }
+    ]
+}

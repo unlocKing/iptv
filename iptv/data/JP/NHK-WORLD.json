@@ -1,0 +1,30 @@
+{
+    "country": "JP",
+    "language": "eng",
+    "m3u": {
+        "chno": "",
+        "group": "",
+        "id": "",
+        "logo": "https://raw.githubusercontent.com/python-iptv/TheLogoDB/master/Images/NHK_World_TV.png",
+        "name": "",
+        "radio": false,
+        "shift": ""
+    },
+    "name": "NHK WORLD",
+    "streams": [
+        {
+            "attributes": {
+                "authentication": false,
+                "datetime": "2018-06-28T21:00:00.000000+00:00",
+                "drm": false,
+                "geolocked": false,
+                "hd": true,
+                "subscription": false
+            },
+            "direct_data": {},
+            "streamlink_data": {},
+            "url": "https://nhkworld.webcdn.stream.ne.jp/www11/nhkworld-tv/global/263941/live_wa_s.m3u8",
+            "usage": "direct"
+        }
+    ]
+}

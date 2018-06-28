@@ -1,0 +1,30 @@
+{
+    "country": "US",
+    "language": "eng",
+    "m3u": {
+        "chno": "",
+        "group": "News",
+        "id": "",
+        "logo": "https://raw.githubusercontent.com/python-iptv/TheLogoDB/master/Images/CBS_-_6_News.png",
+        "name": "",
+        "radio": false,
+        "shift": ""
+    },
+    "name": "CBSN",
+    "streams": [
+        {
+            "attributes": {
+                "authentication": false,
+                "datetime": "2018-06-28T22:00:00.000000+00:00",
+                "drm": false,
+                "geolocked": false,
+                "hd": true,
+                "subscription": false
+            },
+            "direct_data": {},
+            "streamlink_data": {},
+            "url": "https://cbsnewshd-lh.akamaihd.net/i/cbsnhd_7@199302/master.m3u8",
+            "usage": "direct"
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "country": "US",
+    "language": "eng",
+    "m3u": {
+        "chno": "",
+        "group": "",
+        "id": "",
+        "logo": "https://raw.githubusercontent.com/python-iptv/squaredTV/master/squaredTV_generic/Bloomberg-Television.png",
+        "name": "",
+        "radio": false,
+        "shift": ""
+    },
+    "name": "Bloomberg Politics",
+    "streams": [
+        {
+            "attributes": {
+                "authentication": false,
+                "datetime": "2018-06-28T20:00:00.000000+00:00",
+                "drm": false,
+                "geolocked": false,
+                "hd": true,
+                "subscription": false
+            },
+            "direct_data": {},
+            "streamlink_data": {},
+            "url": "https://www.bloomberg.com/live/politics",
+            "usage": "web"
+        }
+    ]
+}
