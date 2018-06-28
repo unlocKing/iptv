@@ -27,9 +27,10 @@ log = logging.getLogger(__name__)
 
 
 def sort_streams(item):
-    return (item['m3u'].get('chno', '9999'),
-            item.get('language', 'ZZZ'),
-            item['name'])
+    return (
+        item['language'],
+        item['name'],
+    )
 
 
 def get_json_files(public=None, private=None):
