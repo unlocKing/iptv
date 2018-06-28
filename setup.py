@@ -54,9 +54,9 @@ setup(
     install_requires=[
         'fastjsonschema',
     ],
-    python_requires='>=3.4, <4',
+    python_requires='>=3.6, <4',
     classifiers=[
-        'Development Status :: 1 - Planning',
+        'Development Status :: 3 - Alpha',
         'Environment :: Console',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
@@ -66,8 +66,6 @@ setup(
         'Operating System :: POSIX',
         'Operating System :: Unix',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: Implementation :: CPython',

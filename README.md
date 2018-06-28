@@ -12,7 +12,7 @@ IPTV is a **M3U Playlist Generator** and a **TV Channel database**.
 
 #### Installation via Python pip
 
-Python **3.5+** is required
+Python **3.6+** is required
 
 ```
 pip install git+https://github.com/back-to/iptv.git
