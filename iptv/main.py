@@ -54,10 +54,10 @@ def get_json_files(public=None, private=None):
     json_files = []
     for _f in folders:
         if not (_f.endswith('**') or os.path.isdir(_f)):
-            log.error('Directory does not exist. {0}'.format(_f))
+            log.error(f'Directory does not exist. {_f}')
             folders.remove(_f)
             continue
-        log.debug('Added Directory {0}'.format(_f))
+        log.debug(f'Added Directory {_f}')
         json_files += list(glob(os.path.join(_f, '*.json')))
 
     return json_files
@@ -67,18 +67,18 @@ def log_current_versions():
     '''Show current installed versions'''
     # MAC OS X
     if sys.platform == 'darwin':
-        os_version = 'macOS {0}'.format(platform.mac_ver()[0])
+        os_version = f'macOS {platform.mac_ver()[0]}'
     # Windows
     elif sys.platform.startswith('win'):
-        os_version = '{0} {1}'.format(platform.system(), platform.release())
+        os_version = f'{platform.system()} {platform.release()}'
     # linux / other
     else:
         os_version = platform.platform()
 
-    log.info('OS:     {0}'.format(os_version))
-    log.info('Python: {0}'.format(platform.python_version()))
-    log.info('IPTV:   {0}'.format(iptv_version))
-    log.debug('Fastjsonschema({0})'.format(fastjsonschema_version))
+    log.info(f'OS:     {os_version}')
+    log.info(f'Python: {platform.python_version()}')
+    log.info(f'IPTV:   {iptv_version}')
+    log.debug(f'Fastjsonschema({fastjsonschema_version})')
 
 
 def m3u_load_data(args):
@@ -98,7 +98,7 @@ def m3u_load_data(args):
                     os.path.split(json_file)[-1],
                     str(e),
                 ))
-    log.info('Found {0} channels'.format(len(data)))
+    log.info(f'Found {len(data)} channels')
 
     m3u = PlaylistM3U()
     data = sorted(data, key=sort_streams)
@@ -106,38 +106,42 @@ def m3u_load_data(args):
     lines = '#EXTM3U\n'
     for _x in data:
         _group = _x.get('m3u', {}).get('group')
-        if (args.remove_country and _x.get('country')
-                and (_x['country'].lower() in [e.lower() for e in args.remove_country])):
-            log.debug('Removed country {0}: {1}'.format(_x['country'], _x['name']))
+        _country = _x.get('country')
+        _name = _x['name']
+        _language = _x.get('language')
+
+        if (args.remove_country and _country
+                and (_country.lower() in [e.lower() for e in args.remove_country])):
+            log.debug(f'Removed country {_country}: {_name}')
             continue
-        if (args.remove_language and _x.get('language')
-                and (_x['language'].lower() in [e.lower() for e in args.remove_language])):
-            log.debug('Removed language {0}: {1}'.format(_x['language'], _x['name']))
+        if (args.remove_language and _language
+                and (_language.lower() in [e.lower() for e in args.remove_language])):
+            log.debug(f'Removed language {_language}: {_name}')
             continue
-        if (args.remove_name and _x['name']
-                and (_x['name'].lower() in [e.lower() for e in args.remove_name])):
-            log.debug('Removed name: {0}'.format(_x['name']))
+        if (args.remove_name and _name
+                and (_name.lower() in [e.lower() for e in args.remove_name])):
+            log.debug(f'Removed name: {_name}')
             continue
-        if (args.source_country and _x.get('country')
-                and (_x['country'].lower() not in [e.lower() for e in args.source_country])):
-            log.debug('Removed source country {0}: {1}'.format(_x['country'], _x['name']))
+        if (args.source_country and _country
+                and (_country.lower() not in [e.lower() for e in args.source_country])):
+            log.debug(f'Removed source country {_country}: {_name}')
             continue
-        if (args.source_language and _x.get('language')
-                and (_x['language'].lower() not in [e.lower() for e in args.source_language])):
-            log.debug('Removed source language {0}: {1}'.format(_x['language'], _x['name']))
+        if (args.source_language and _language
+                and (_language.lower() not in [e.lower() for e in args.source_language])):
+            log.debug(f'Removed source language {_language}: {_name}')
             continue
 
-        if (args.group_language and _x.get('language')):
-            _group = ';'.join(filter(None, [_x['language'].upper(), _group]))
-        if (args.group_country and _x.get('country')):
-            _group = ';'.join(filter(None, [_x['country'].upper(), _group]))
+        if (args.group_language and _language):
+            _group = ';'.join(filter(None, [_language.upper(), _group]))
+        if (args.group_country and _country):
+            _group = ';'.join(filter(None, [_country.upper(), _group]))
 
         if (args.remove_group and _group):
             _le = len(_group)
             _f = comma_list_filter_remove(args.remove_group, ';')
             _group = ';'.join(filter(None, _f(_group)))
             if len(_group) != _le:
-                log.debug('Removed group: {0}'.format(_x['name']))
+                log.debug(f'Removed group: {_name}')
                 continue
 
         if (args.limit_group and _group):

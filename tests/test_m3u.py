@@ -38,6 +38,39 @@ class TestPlaylistM3U(unittest.TestCase):
         for logo, logopath, result in test_data:
             self.assertEqual(self.m3u.m3u_logopath(logo, logopath), result)
 
+    def test_m3u_metadata(self):
+        # JSON - CHANNEL - LOGOPATH - RESULT LINE
+        test_data = [
+            (
+                {'id': '2', 'radio': False, 'group': 'News'}, 'TV', '',
+                '#EXTINF:-1 tvg-id="2" group-title="News",TV'
+            ),
+            (
+                {'radio': False}, 'FOO', '',
+                '#EXTINF:-1,FOO'
+            ),
+            (
+                {'radio': True}, 'FOO11', '',
+                '#EXTINF:-1 radio="true",FOO11'
+            ),
+            (
+                {}, 'ZYX2', 'http://example.com/foo.png',
+                '#EXTINF:-1 tvg-logo="http://example.com/foo.png",ZYX2'
+            ),
+
+            (
+                {'shift': '4'}, 'ZYX3', '',
+                '#EXTINF:-1 tvg-shift="4",ZYX3'
+            ),
+            (
+                {'chno': '55', 'name': 'ID'}, 'ZYX4', '',
+                '#EXTINF:-1 tvg-name="ID" tvg-chno="55",ZYX4'
+            ),
+        ]
+
+        for _j, _c, _l, _r in test_data:
+            self.assertEqual(self.m3u.m3u_metadata(_c, _j, _l), _r)
+
     def test_m3u_name_netloc(self):
         test_data = [
             ('https://www.zdf.de/', 'zdf.de'),
