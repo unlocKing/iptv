@@ -13,12 +13,13 @@
         "authentication": false,
         "subscription": false,
         "drm": false,
-        "hd": true
+        "hd": true,
+        "source": "https://sport.sky.de/sky-sport-news-hd"
       }
     }
   ],
   "m3u": {
-    "logo": "https://raw.githubusercontent.com/python-iptv/TheLogoDB/master/Images/Sky_Sport_News_HD.png",
+    "logo": "https://raw.githubusercontent.com/python-iptv/TheLogoDB/master/S/Sky_Sport_News_HD.png",
     "id": "",
     "shift": "",
     "name": "",

@@ -1,29 +1,30 @@
 {
-    "country": "US",
-    "language": "eng",
+    "country": "DE",
+    "language": "deu",
     "m3u": {
         "chno": "",
-        "group": "News",
+        "group": "",
         "id": "",
-        "logo": "https://raw.githubusercontent.com/python-iptv/TheLogoDB/master/A/ABC.png",
+        "logo": "",
         "name": "",
         "radio": false,
         "shift": ""
     },
-    "name": "ABC News",
+    "name": "Baden TV",
     "streams": [
         {
             "attributes": {
                 "authentication": false,
-                "datetime": "2018-06-28T22:00:00.000000+00:00",
+                "datetime": "2018-06-30T18:00:00.000000+00:00",
                 "drm": false,
                 "geolocked": false,
                 "hd": true,
+                "source": "https://baden-tv.com/livestream/",
                 "subscription": false
             },
             "direct_data": {},
             "streamlink_data": {},
-            "url": "https://abclive1-lh.akamaihd.net/i/abc_live10@420897/master.m3u8",
+            "url": "https://cdn.icu.de/rtplive/smil:btv.smil/playlist.m3u8",
             "usage": "direct"
         }
     ]

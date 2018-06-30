@@ -19,6 +19,7 @@
                 "drm": false,
                 "geolocked": false,
                 "hd": false,
+                "source": "https://www.alex-berlin.de/tv/livestream.html",
                 "subscription": false
             },
             "direct_data": {},

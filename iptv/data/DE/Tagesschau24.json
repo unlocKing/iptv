@@ -26,7 +26,8 @@
         "authentication": false,
         "subscription": false,
         "drm": false,
-        "hd": true
+        "hd": true,
+        "source": "https://www.ardmediathek.de/tv/tagesschau24/live?kanal=5878"
       }
     }
   ],

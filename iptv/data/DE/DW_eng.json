@@ -1,6 +1,6 @@
 {
   "name": "DW",
-  "country": "GB",
+  "country": "DE",
   "language": "eng",
   "streams": [
     {
@@ -18,7 +18,7 @@
     }
   ],
   "m3u": {
-    "logo": "",
+    "logo": "https://raw.githubusercontent.com/python-iptv/squaredTV/master/squaredTV_generic/Deutsche-Welle.png",
     "id": "",
     "shift": "",
     "name": "",
