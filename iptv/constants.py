@@ -85,6 +85,11 @@ JSON_SCHEMA = {
                                 'type': 'boolean',
                                 'default': False,
                                 'description': '(Boolean) Optional: If the stream is available in High Definition; Default=false'
+                            },
+                            'source': {
+                                'type': 'string',
+                                'default': '',
+                                'description': '(String)  Optional: Website where the stream can be found, if not the same as the stream url'
                             }
                         }
                     }

@@ -424,6 +424,14 @@ def build_parser():
         '''
     )
     _json_stream.add_argument(
+        '--source',
+        action='store_true',
+        default=False,
+        help='''
+        (String)  Optional: Website where the stream can be found, if not the same as the stream url
+        '''
+    )
+    _json_stream.add_argument(
         '--subscription',
         action='store_true',
         default=False,

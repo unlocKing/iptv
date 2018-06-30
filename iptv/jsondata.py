@@ -41,6 +41,7 @@ def create_json_data(args):
                     'drm': args.drm,
                     'geolocked': args.geolocked,
                     'hd': args.hd,
+                    'source': args.source,
                     'subscription': args.subscription
                 },
                 'direct_data': {},
