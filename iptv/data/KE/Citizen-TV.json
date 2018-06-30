@@ -1,0 +1,30 @@
+{
+    "country": "KE",
+    "language": "swa",
+    "m3u": {
+        "chno": "",
+        "group": "",
+        "id": "",
+        "logo": "",
+        "name": "",
+        "radio": false,
+        "shift": ""
+    },
+    "name": "Citizen TV",
+    "streams": [
+        {
+            "attributes": {
+                "authentication": false,
+                "datetime": "2018-06-30T17:00:00.000000+00:00",
+                "drm": false,
+                "geolocked": false,
+                "hd": false,
+                "subscription": false
+            },
+            "direct_data": {},
+            "streamlink_data": {},
+            "url": "https://www.dailymotion.com/royal-media",
+            "usage": "streamlink"
+        }
+    ]
+}

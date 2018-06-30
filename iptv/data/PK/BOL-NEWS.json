@@ -1,0 +1,30 @@
+{
+    "country": "PK",
+    "language": "urd",
+    "m3u": {
+        "chno": "",
+        "group": "",
+        "id": "",
+        "logo": "",
+        "name": "",
+        "radio": false,
+        "shift": ""
+    },
+    "name": "BOL NEWS",
+    "streams": [
+        {
+            "attributes": {
+                "authentication": false,
+                "datetime": "2018-06-30T17:00:00.000000+00:00",
+                "drm": false,
+                "geolocked": false,
+                "hd": true,
+                "subscription": false
+            },
+            "direct_data": {},
+            "streamlink_data": {},
+            "url": "https://www.youtube.com/channel/ucv6-cunsfe2-styfykd7bbq",
+            "usage": "streamlink"
+        }
+    ]
+}
