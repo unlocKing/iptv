@@ -1,5 +1,7 @@
 import unittest
 
+from collections import namedtuple
+
 from iptv.m3u import PlaylistM3U
 
 
@@ -7,6 +9,21 @@ class TestPlaylistM3U(unittest.TestCase):
 
     def setUp(self):
         self.m3u = PlaylistM3U()
+
+    def test_m3u_group_iso(self):
+        TestStream = namedtuple('TestStream', 'group_country group_language')
+
+        test_data = [
+            ('', TestStream(False, False), '', '', ''),
+            ('', TestStream(True, False), 'RU', 'rus', 'RU'),
+            ('', TestStream(False, True), 'RU', 'RUS', 'RUS'),
+            ('News', TestStream(False, True), 'RU', 'RUS', 'RUS;News'),
+        ]
+
+        for group, args, country, language, result in test_data:
+            self.assertEqual(
+                self.m3u.m3u_group_iso(group, args, country, language),
+                result)
 
     def test_m3u_item(self):
         test_data = [
