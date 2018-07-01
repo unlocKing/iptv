@@ -5,7 +5,7 @@
   "streams": [
     {
       "url": "https://live.russia.tv/index/index/channel_id/3",
-      "usage": "web",
+      "usage": "streamlink",
       "streamlink_data": {},
       "direct_data": {},
       "attributes": {

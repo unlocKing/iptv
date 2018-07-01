@@ -1,0 +1,120 @@
+{
+    "country": "US",
+    "language": "eng",
+    "m3u": {
+        "chno": "",
+        "group": "",
+        "id": "",
+        "logo": "https://raw.githubusercontent.com/python-iptv/squaredTV/master/squaredTV_generic/Bloomberg-Television.png",
+        "name": "",
+        "radio": false,
+        "shift": ""
+    },
+    "streams": [
+        {
+            "attributes": {
+                "authentication": false,
+                "datetime": "2018-06-28T20:00:00.000000+00:00",
+                "drm": false,
+                "geolocked": false,
+                "hd": true,
+                "subscription": false
+            },
+            "name": "Bloomberg US",
+            "direct_data": {},
+            "streamlink_data": {},
+            "url": "https://www.bloomberg.com/live/us",
+            "usage": "streamlink"
+        },
+        {
+            "attributes": {
+                "authentication": false,
+                "datetime": "2018-06-28T20:00:00.000000+00:00",
+                "drm": false,
+                "geolocked": false,
+                "hd": true,
+                "subscription": false
+            },
+            "name": "Bloomberg Asia Event",
+            "direct_data": {},
+            "streamlink_data": {},
+            "url": "https://www.bloomberg.com/live/asia_stream",
+            "usage": "streamlink"
+        },
+        {
+            "attributes": {
+                "authentication": false,
+                "datetime": "2018-06-28T20:00:00.000000+00:00",
+                "drm": false,
+                "geolocked": false,
+                "hd": true,
+                "subscription": false
+            },
+            "name": "Bloomberg Asia",
+            "direct_data": {},
+            "streamlink_data": {},
+            "url": "https://www.bloomberg.com/live/asia",
+            "usage": "streamlink"
+        },
+        {
+            "attributes": {
+                "authentication": false,
+                "datetime": "2018-06-28T20:00:00.000000+00:00",
+                "drm": false,
+                "geolocked": false,
+                "hd": true,
+                "subscription": false
+            },
+            "name": "Bloomberg Australia",
+            "direct_data": {},
+            "streamlink_data": {},
+            "url": "https://www.bloomberg.com/live/australia",
+            "usage": "web"
+        },
+        {
+            "attributes": {
+                "authentication": false,
+                "datetime": "2018-06-28T20:00:00.000000+00:00",
+                "drm": false,
+                "geolocked": false,
+                "hd": true,
+                "subscription": false
+            },
+            "name": "Bloomberg Europe",
+            "direct_data": {},
+            "streamlink_data": {},
+            "url": "https://www.bloomberg.com/live/europe",
+            "usage": "streamlink"
+        },
+        {
+            "attributes": {
+                "authentication": false,
+                "datetime": "2018-06-28T20:00:00.000000+00:00",
+                "drm": false,
+                "geolocked": false,
+                "hd": true,
+                "subscription": false
+            },
+            "name": "Bloomberg Politics",
+            "direct_data": {},
+            "streamlink_data": {},
+            "url": "https://www.bloomberg.com/live/politics",
+            "usage": "web"
+        },
+        {
+            "attributes": {
+                "authentication": false,
+                "datetime": "2018-06-28T20:00:00.000000+00:00",
+                "drm": false,
+                "geolocked": false,
+                "hd": true,
+                "subscription": false
+            },
+            "name": "Bloomberg US Event",
+            "direct_data": {},
+            "streamlink_data": {},
+            "url": "https://www.bloomberg.com/live/stream",
+            "usage": "streamlink"
+        }
+    ]
+}

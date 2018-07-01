@@ -1,0 +1,74 @@
+{
+  "country": "DE",
+  "language": "deu",
+  "streams": [
+    {
+      "url": "https://rbblive-lh.akamaihd.net/i/rbb_berlin@144674/index_7_av-p.m3u8",
+      "usage": "direct",
+      "name": "RBB Berlin",
+      "streamlink_data": {},
+      "direct_data": {},
+      "attributes": {
+        "datetime": "2018-07-01T20:00:00.000000+00:00",
+        "geolocked": true,
+        "authentication": false,
+        "subscription": false,
+        "drm": false,
+        "hd": true
+      }
+    },
+    {
+      "url": "https://www.ardmediathek.de/tv/rbb-Fernsehen-Berlin/live?kanal=21518358",
+      "usage": "streamlink",
+      "name": "RBB Berlin",
+      "streamlink_data": {},
+      "direct_data": {},
+      "attributes": {
+        "datetime": "2018-07-01T20:00:00.000000+00:00",
+        "geolocked": true,
+        "authentication": false,
+        "subscription": false,
+        "drm": false,
+        "hd": true
+      }
+    },
+    {
+      "url": "https://rbblive-lh.akamaihd.net/i/rbb_brandenburg@349369/index_7_av-p.m3u8",
+      "usage": "direct",
+      "name": "RBB Brandenburg",
+      "streamlink_data": {},
+      "direct_data": {},
+      "attributes": {
+        "datetime": "2018-07-01T20:00:00.000000+00:00",
+        "geolocked": true,
+        "authentication": false,
+        "subscription": false,
+        "drm": false,
+        "hd": true
+      }
+    },
+    {
+      "url": "https://www.ardmediathek.de/tv/rbb-Fernsehen-Brandenburg/live?kanal=21518356",
+      "usage": "streamlink",
+      "name": "RBB Brandenburg",
+      "streamlink_data": {},
+      "direct_data": {},
+      "attributes": {
+        "datetime": "2018-07-01T20:00:00.000000+00:00",
+        "geolocked": true,
+        "authentication": false,
+        "subscription": false,
+        "drm": false,
+        "hd": true
+      }
+    }
+  ],
+  "m3u": {
+    "logo": "https://raw.githubusercontent.com/python-iptv/resources/master/logos/v1/de_rbb.png",
+    "id": "",
+    "shift": "",
+    "name": "",
+    "radio": false,
+    "group": ""
+  }
+}

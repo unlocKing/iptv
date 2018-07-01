@@ -10,7 +10,6 @@
         "radio": false,
         "shift": ""
     },
-    "name": "noa4 Norderstedt",
     "streams": [
         {
             "attributes": {
@@ -22,9 +21,26 @@
                 "source": "http://www.noa4.tv/",
                 "subscription": false
             },
+            "name": "noa4 Norderstedt",
             "direct_data": {},
             "streamlink_data": {},
             "url": "http://hls1.wtnet.de/noa4/apple/wifi.m3u8",
+            "usage": "direct"
+        },
+        {
+            "attributes": {
+                "authentication": false,
+                "datetime": "2018-06-30T18:00:00.000000+00:00",
+                "drm": false,
+                "geolocked": false,
+                "hd": true,
+                "source": "http://www.noa4.tv/",
+                "subscription": false
+            },
+            "name": "noa4 Hamburg",
+            "direct_data": {},
+            "streamlink_data": {},
+            "url": "http://hls1.wtnet.de/noa4hh/apple/wifi.m3u8",
             "usage": "direct"
         }
     ]

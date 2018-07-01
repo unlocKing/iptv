@@ -1,0 +1,66 @@
+{
+  "country": "EG",
+  "streams": [
+    {
+      "direct_data": {},
+      "language": "rus",
+      "name": "Euronews RU",
+      "streamlink_data": {},
+      "url": "https://ru.euronews.com/live",
+      "usage": "streamlink",
+      "attributes": {
+        "datetime": "2018-07-01T20:00:00.000000+00:00",
+        "geolocked": false,
+        "authentication": false,
+        "subscription": false,
+        "drm": false,
+        "hd": true
+      }
+    },
+    {
+      "direct_data": {},
+      "language": "deu",
+      "name": "Euronews DE",
+      "streamlink_data": {},
+      "url": "https://de.euronews.com/live",
+      "usage": "streamlink",
+      "m3u": {
+        "group": "Nachrichten"
+      },
+      "attributes": {
+        "datetime": "2018-07-01T20:00:00.000000+00:00",
+        "geolocked": false,
+        "authentication": false,
+        "subscription": false,
+        "drm": false,
+        "hd": true
+      }
+    },
+    {
+      "url": "https://www.euronews.com/live",
+      "usage": "streamlink",
+      "language": "eng",
+      "streamlink_data": {},
+      "direct_data": {},
+      "name": "Euronews ENG",
+      "m3u": {
+        "group": "News"
+      },
+      "attributes": {
+        "geolocked": false,
+        "authentication": false,
+        "subscription": false,
+        "drm": false,
+        "hd": true
+      }
+    }
+  ],
+  "m3u": {
+    "logo": "https://raw.githubusercontent.com/python-iptv/resources/master/logos/v1/eu_euronews.png",
+    "id": "",
+    "shift": "",
+    "name": "",
+    "radio": false,
+    "group": ""
+  }
+}

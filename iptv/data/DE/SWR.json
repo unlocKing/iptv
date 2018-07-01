@@ -1,0 +1,74 @@
+{
+  "country": "DE",
+  "language": "deu",
+  "streams": [
+    {
+      "url": "https://swrbw-lh.akamaihd.net/i/swrbw_live@196738/index_3584_av-p.m3u8",
+      "usage": "direct",
+      "name": "SWR Baden-Württemberg",
+      "streamlink_data": {},
+      "direct_data": {},
+      "attributes": {
+        "datetime": "2018-07-01T20:00:00.000000+00:00",
+        "geolocked": true,
+        "authentication": false,
+        "subscription": false,
+        "drm": false,
+        "hd": true
+      }
+    },
+    {
+      "url": "https://www.ardmediathek.de/tv/SWR-Baden-W%C3%BCrttemberg/live?kanal=5904",
+      "usage": "streamlink",
+      "name": "SWR Baden-Württemberg",
+      "streamlink_data": {},
+      "direct_data": {},
+      "attributes": {
+        "datetime": "2018-07-01T20:00:00.000000+00:00",
+        "geolocked": true,
+        "authentication": false,
+        "subscription": false,
+        "drm": false,
+        "hd": true
+      }
+    },
+    {
+      "url": "https://swrrp-lh.akamaihd.net/i/swrrp_live@196739/index_3584_av-p.m3u8",
+      "usage": "direct",
+      "name": "SWR Rheinland-Pfalz",
+      "streamlink_data": {},
+      "direct_data": {},
+      "attributes": {
+        "datetime": "2018-07-01T20:00:00.000000+00:00",
+        "geolocked": true,
+        "authentication": false,
+        "subscription": false,
+        "drm": false,
+        "hd": true
+      }
+    },
+    {
+      "url": "https://www.ardmediathek.de/tv/SWR-Rheinland-Pfalz/live?kanal=5872",
+      "usage": "streamlink",
+      "name": "SWR Rheinland-Pfalz",
+      "streamlink_data": {},
+      "direct_data": {},
+      "attributes": {
+        "datetime": "2018-07-01T20:00:00.000000+00:00",
+        "geolocked": true,
+        "authentication": false,
+        "subscription": false,
+        "drm": false,
+        "hd": true
+      }
+    }
+  ],
+  "m3u": {
+    "logo": "https://raw.githubusercontent.com/python-iptv/resources/master/logos/v1/de_swr.png",
+    "id": "",
+    "shift": "",
+    "name": "",
+    "radio": false,
+    "group": ""
+  }
+}
