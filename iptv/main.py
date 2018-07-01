@@ -16,10 +16,10 @@ from glob import glob
 from iptv import __version__ as iptv_version
 from iptv.argparser import build_parser
 from iptv.constants import JSON_SCHEMA
-from iptv.jsondata import create_json_data
+# from iptv.jsondata import create_json_data
 from iptv.m3u import PlaylistM3U
 from iptv.output import write_data
-from iptv.utils import comma_list, comma_list_filter_remove
+from iptv.utils import comma_list
 
 FORMAT = '[%(name)s][%(levelname)s] %(message)s'
 logging.basicConfig(stream=sys.stdout, format=FORMAT, level=logging.DEBUG)
@@ -28,8 +28,9 @@ log = logging.getLogger(__name__)
 
 def sort_streams(item):
     return (
-        item['language'],
-        item['name'],
+        item.language,
+        item.name,
+        -item.hd,
     )
 
 
@@ -101,58 +102,10 @@ def m3u_load_data(args):
     log.info(f'Found {len(data)} channels')
 
     m3u = PlaylistM3U()
-    data = sorted(data, key=sort_streams)
-
-    lines = '#EXTM3U\n'
+    streams = []
     for _x in data:
-        _group = _x.get('m3u', {}).get('group')
-        _country = _x.get('country')
-        _name = _x['name']
-        _language = _x.get('language')
-
-        if (args.remove_country and _country
-                and (_country.lower() in [e.lower() for e in args.remove_country])):
-            log.debug(f'Removed country {_country}: {_name}')
-            continue
-        if (args.remove_language and _language
-                and (_language.lower() in [e.lower() for e in args.remove_language])):
-            log.debug(f'Removed language {_language}: {_name}')
-            continue
-        if (args.remove_name and _name
-                and (_name.lower() in [e.lower() for e in args.remove_name])):
-            log.debug(f'Removed name: {_name}')
-            continue
-        if (args.source_country and _country
-                and (_country.lower() not in [e.lower() for e in args.source_country])):
-            log.debug(f'Removed source country {_country}: {_name}')
-            continue
-        if (args.source_language and _language
-                and (_language.lower() not in [e.lower() for e in args.source_language])):
-            log.debug(f'Removed source language {_language}: {_name}')
-            continue
-
-        if (args.group_language and _language):
-            _group = ';'.join(filter(None, [_language.upper(), _group]))
-        if (args.group_country and _country):
-            _group = ';'.join(filter(None, [_country.upper(), _group]))
-
-        if (args.remove_group and _group):
-            _le = len(_group)
-            _f = comma_list_filter_remove(args.remove_group, ';')
-            _group = ';'.join(filter(None, _f(_group)))
-            if len(_group) != _le:
-                log.debug(f'Removed group: {_name}')
-                continue
-
-        if (args.limit_group and _group):
-            if isinstance(_group, str):
-                _group = comma_list(_group, ';')
-            if isinstance(_group, list) and len(_group) > 0:
-                _group = _group[0]
-
-        _x.update({'m3u': {'group': _group}})
-        lines += m3u._generate(_x, args)
-    return lines
+        streams += m3u._generate(_x, args)
+    return streams
 
 
 def setup_args():
@@ -171,11 +124,40 @@ def main():
         '''create M3U file'''
         log.debug('Found M3U command.')
         data = m3u_load_data(args)
-        write_data(args.output, data)
+        data = sorted(data, key=sort_streams)
+
+        lines = []
+        cd = {}
+        for x in data:
+            # START - mirror
+            if not cd.get(x.country):
+                cd[x.country] = {}
+
+            if not cd[x.country].get(x.language):
+                cd[x.country][x.language] = {}
+
+            if not cd[x.country][x.language].get(x.name):
+                cd[x.country][x.language][x.name] = 1
+            else:
+                cd[x.country][x.language][x.name] += 1
+
+            _mirror = cd[x.country][x.language][x.name]
+
+            if args.limit_mirror <= _mirror:
+                log.debug(f'Skip mirror {_mirror}: {x.name}')
+                continue
+            # END - mirror
+
+            lines += [x.dataline]
+
+        lines = ''.join(lines)
+        lines = f'#EXTM3U\n{lines}'
+        write_data(args.output, lines)
     elif args.which == 'json':
         '''create JSON file'''
-        log.debug('Found JSON command.')
-        return create_json_data(args)
+        log.error('currently deactivated')
+        # log.debug('Found JSON command.')
+        # return create_json_data(args)
     else:
         log.error('invalid command name')
         return

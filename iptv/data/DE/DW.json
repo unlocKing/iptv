@@ -28,6 +28,51 @@
         "drm": false,
         "hd": false
       }
+    },
+    {
+      "url": "https://www.youtube.com/channel/UCknLrEdhRCp1aegoMqRaCZg",
+      "usage": "streamlink",
+      "streamlink_data": {},
+      "direct_data": {},
+      "language": "eng",
+      "name": "DW English",
+      "attributes": {
+        "geolocked": false,
+        "authentication": false,
+        "subscription": false,
+        "drm": false,
+        "hd": true
+      }
+    },
+    {
+      "url": "https://www.youtube.com/user/DeutscheWelleEspanol",
+      "usage": "streamlink",
+      "streamlink_data": {},
+      "direct_data": {},
+      "language": "spa",
+      "name": "DW Español",
+      "attributes": {
+        "geolocked": false,
+        "authentication": false,
+        "subscription": false,
+        "drm": false,
+        "hd": true
+      }
+    },
+    {
+      "url": "https://www.youtube.com/user/deutschewellearabic",
+      "usage": "streamlink",
+      "streamlink_data": {},
+      "direct_data": {},
+      "language": "ara",
+      "name": "DW Arabic",
+      "attributes": {
+        "geolocked": false,
+        "authentication": false,
+        "subscription": false,
+        "drm": false,
+        "hd": true
+      }
     }
   ],
   "m3u": {

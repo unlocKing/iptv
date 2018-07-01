@@ -94,19 +94,6 @@ class TestConstants(unittest.TestCase):
 
         # invalid data
         test_data = [
-            # Required "name"
-            '''
-            {
-              "country": "DE",
-              "language": "deu",
-              "streams": [
-                {
-                  "url": "https://foo.bar",
-                  "usage": "streamlink"
-                }
-              ]
-            }
-            ''',
             # invalid length "country"
             '''
             {

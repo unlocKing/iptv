@@ -15,6 +15,7 @@ before_install:
   - if [[ $UPLOAD_M3U == 'yes' ]]; then
       pip install doctr;
     fi
+  - mkdir playlist
 
 install:
   - pip install -e .

@@ -24,6 +24,21 @@ class TestPlaylistM3U(unittest.TestCase):
         for item, value, result in test_data:
             self.assertEqual(self.m3u.m3u_item(item, value), result)
 
+    def test_m3u_key(self):
+        test_data = [
+            ('id', {}, {}, ''),
+            ('id', {'id': 'stream'}, {'id': 'data'}, 'stream'),
+            ('id', {'id': 'stream'}, {'id': ''}, 'stream'),
+            ('id', {}, {'id': 'data'}, 'data'),
+            ('id', {'id': ''}, {'id': 'data'}, ''),
+        ]
+        for key, stream_m3u, data_m3u, result in test_data:
+            self.assertEqual(
+                self.m3u.m3u_key(key,
+                                 stream_m3u,
+                                 data_m3u),
+                result)
+
     def test_m3u_logopath(self):
         test_data = [
             ('img.png', 'https://www.zdf.de/', 'https://www.zdf.de/img.png'),
@@ -39,37 +54,58 @@ class TestPlaylistM3U(unittest.TestCase):
             self.assertEqual(self.m3u.m3u_logopath(logo, logopath), result)
 
     def test_m3u_metadata(self):
-        # JSON - CHANNEL - LOGOPATH - RESULT LINE
+        # stream_m3u - data_m3u - LOGOPATH - RESULT LINE
         test_data = [
             (
-                {'id': '2', 'radio': False, 'group': 'News'}, 'TV', '',
-                '#EXTINF:-1 tvg-id="2" group-title="News",TV'
+                {'id': '2', 'radio': False},
+                {}, '',
+                '#EXTINF:-1 tvg-id="2"'
             ),
             (
-                {'radio': False}, 'FOO', '',
-                '#EXTINF:-1,FOO'
+                {'radio': False}, {}, '',
+                '#EXTINF:-1'
             ),
             (
-                {'radio': True}, 'FOO11', '',
-                '#EXTINF:-1 radio="true",FOO11'
+                {'radio': True}, {}, '',
+                '#EXTINF:-1 radio="true"'
             ),
             (
-                {}, 'ZYX2', 'http://example.com/foo.png',
-                '#EXTINF:-1 tvg-logo="http://example.com/foo.png",ZYX2'
+                {}, {}, 'http://example.com/foo.png',
+                '#EXTINF:-1 tvg-logo="http://example.com/foo.png"'
             ),
 
             (
-                {'shift': '4'}, 'ZYX3', '',
-                '#EXTINF:-1 tvg-shift="4",ZYX3'
+                {'shift': '4'}, {}, '',
+                '#EXTINF:-1 tvg-shift="4"'
             ),
             (
-                {'chno': '55', 'name': 'ID'}, 'ZYX4', '',
-                '#EXTINF:-1 tvg-name="ID" tvg-chno="55",ZYX4'
+                {'chno': '55', 'name': 'ID'}, {}, '',
+                '#EXTINF:-1 tvg-name="ID" tvg-chno="55"'
+            ),
+            (
+                {'chno': '222', 'name': 'ID'},
+                {'chno': '55', 'name': 'ID'}, '',
+                '#EXTINF:-1 tvg-name="ID" tvg-chno="222"'
+            ),
+            (
+                {'chno': '', '': 'ID'},
+                {'chno': '55', 'name': 'ID'}, '',
+                '#EXTINF:-1 tvg-name="ID"'
+            ),
+            (
+                {'name': 'ID1'},
+                {'chno': '55', 'name': 'ID'}, '',
+                '#EXTINF:-1 tvg-name="ID1" tvg-chno="55"'
             ),
         ]
 
-        for _j, _c, _l, _r in test_data:
-            self.assertEqual(self.m3u.m3u_metadata(_c, _j, _l), _r)
+        for _stream_m3u, _data_m3u, _logo, _result in test_data:
+            self.assertEqual(
+                self.m3u.m3u_metadata(
+                    _stream_m3u,
+                    _data_m3u,
+                    _logo),
+                _result)
 
     def test_m3u_name_netloc(self):
         test_data = [
