@@ -1,0 +1,118 @@
+{
+  "country": "DE",
+  "language": "deu",
+  "streams": [
+    {
+      "url": "https://www.prosieben.de/livestream",
+      "name": "ProSieben",
+      "usage": "web",
+      "m3u": {
+        "logo": "https://raw.githubusercontent.com/python-iptv/resources/master/logos/v1/de_prosieben.png"
+      },
+      "attributes": {
+        "datetime": "2018-07-03T20:00:00.000000+00:00",
+        "geolocked": true,
+        "authentication": true,
+        "subscription": false,
+        "drm": true,
+        "hd": false
+      }
+    },
+    {
+      "url": "https://www.kabeleins.de/livestream",
+      "name": "Kabel eins",
+      "usage": "web",
+      "m3u": {
+        "logo": "https://raw.githubusercontent.com/python-iptv/resources/master/logos/v1/de_kabel_eins.png"
+      },
+      "attributes": {
+        "datetime": "2018-07-03T20:00:00.000000+00:00",
+        "geolocked": true,
+        "authentication": true,
+        "subscription": false,
+        "drm": true,
+        "hd": false
+      }
+    },
+    {
+      "url": "https://www.sat1.de/livestream",
+      "name": "Sat.1",
+      "usage": "web",
+      "m3u": {
+        "logo": "https://raw.githubusercontent.com/python-iptv/resources/master/logos/v1/de_sat1.png"
+      },
+      "attributes": {
+        "datetime": "2018-07-03T20:00:00.000000+00:00",
+        "geolocked": true,
+        "authentication": true,
+        "subscription": false,
+        "drm": true,
+        "hd": false
+      }
+    },
+    {
+      "url": "https://www.prosiebenmaxx.de/livestream",
+      "name": "ProSieben MAXX",
+      "usage": "web",
+      "m3u": {
+        "logo": "https://raw.githubusercontent.com/python-iptv/resources/master/logos/v1/de_prosieben_maxx.png"
+      },
+      "attributes": {
+        "datetime": "2018-07-03T20:00:00.000000+00:00",
+        "geolocked": true,
+        "authentication": true,
+        "subscription": false,
+        "drm": true,
+        "hd": false
+      }
+    },
+    {
+      "url": "https://www.kabeleinsdoku.de/livestream",
+      "name": "Kabel eins doku",
+      "usage": "web",
+      "m3u": {
+        "logo": "https://raw.githubusercontent.com/python-iptv/resources/master/logos/v1/de_kabel1_doku.png"
+      },
+      "attributes": {
+        "datetime": "2018-07-03T20:00:00.000000+00:00",
+        "geolocked": true,
+        "authentication": true,
+        "subscription": false,
+        "drm": true,
+        "hd": false
+      }
+    },
+    {
+      "url": "https://www.sixx.de/livestream",
+      "name": "Sixx",
+      "usage": "web",
+      "m3u": {
+        "logo": "https://raw.githubusercontent.com/python-iptv/resources/master/logos/v1/de_sixx.png"
+      },
+      "attributes": {
+        "datetime": "2018-07-03T20:00:00.000000+00:00",
+        "geolocked": true,
+        "authentication": true,
+        "subscription": false,
+        "drm": true,
+        "hd": false
+      }
+    },
+    {
+      "url": "https://www.sat1gold.de/livestream",
+      "name": "Sat.1 Gold",
+      "usage": "web",
+      "m3u": {
+        "logo": "https://raw.githubusercontent.com/python-iptv/resources/master/logos/v1/de_sat1_gold.png"
+      },
+      "attributes": {
+        "datetime": "2018-07-03T20:00:00.000000+00:00",
+        "geolocked": true,
+        "authentication": true,
+        "subscription": false,
+        "drm": true,
+        "hd": false
+      }
+    }
+  ]
+}

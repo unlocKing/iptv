@@ -1,0 +1,30 @@
+{
+  "name": "ServusTV",
+  "country": "AT",
+  "language": "deu",
+  "streams": [
+    {
+      "url": "https://liveservustv-i.akamaihd.net/hls/live/271000/ServusTV_DE/master.m3u8",
+      "usage": "direct",
+      "streamlink_data": {},
+      "direct_data": {},
+      "attributes": {
+        "datetime": "2018-07-03T20:00:00.000000+00:00",
+        "source": "https://www.servus.com/de/tv/jetzt-bei-servus-tv/",
+        "geolocked": false,
+        "authentication": false,
+        "subscription": false,
+        "drm": false,
+        "hd": true
+      }
+    }
+  ],
+  "m3u": {
+    "logo": "https://raw.githubusercontent.com/python-iptv/resources/master/logos/v1/de_servus_tv_hd.png",
+    "id": "",
+    "shift": "",
+    "name": "",
+    "radio": false,
+    "group": ""
+  }
+}

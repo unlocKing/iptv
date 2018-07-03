@@ -1,0 +1,19 @@
+{
+  "name": "RocketBeansTV",
+  "country": "DE",
+  "language": "deu",
+  "streams": [
+    {
+      "url": "https://www.youtube.com/user/ROCKETBEANSTV",
+      "usage": "streamlink",
+      "attributes": {
+        "datetime": "2018-07-03T20:00:00.000000+00:00",
+        "geolocked": false,
+        "authentication": false,
+        "subscription": false,
+        "drm": false,
+        "hd": true
+      }
+    }
+  ]
+}

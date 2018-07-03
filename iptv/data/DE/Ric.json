@@ -1,0 +1,22 @@
+{
+  "name": "Ric / eoTV",
+  "country": "DE",
+  "language": "deu",
+  "streams": [
+    {
+      "url": "https://58b42f6c8c9bf.streamlock.net/live/rictv/playlist.m3u8",
+      "usage": "direct",
+      "streamlink_data": {},
+      "direct_data": {},
+      "attributes": {
+        "datetime": "2018-07-03T20:00:00.000000+00:00",
+        "source": "http://www.rictv.de/",
+        "geolocked": false,
+        "authentication": false,
+        "subscription": false,
+        "drm": false,
+        "hd": true
+      }
+    }
+  ]
+}

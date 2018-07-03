@@ -22,7 +22,20 @@
       "streamlink_data": {},
       "direct_data": {},
       "attributes": {
-        "geolocked": true,
+        "geolocked": false,
+        "authentication": false,
+        "subscription": false,
+        "drm": false,
+        "hd": false
+      }
+    },
+    {
+      "url": "https://dwstream1-lh.akamaihd.net/i/dwstream1_live@120422/master.m3u8",
+      "usage": "direct",
+      "language": "eng",
+      "name": "DW English",
+      "attributes": {
+        "geolocked": false,
         "authentication": false,
         "subscription": false,
         "drm": false,
