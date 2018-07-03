@@ -29,7 +29,7 @@ log = logging.getLogger(__name__)
 def sort_streams(item):
     return (
         item.language,
-        item.name,
+        item.name.lower(),
         -item.hd,
     )
 
